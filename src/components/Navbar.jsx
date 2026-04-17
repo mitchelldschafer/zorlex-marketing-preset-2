@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <>
       <nav 
-        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-48px)] max-w-[1320px] transition-all duration-300 ease-out rounded-full ${scrolled ? 'bg-dark-surface/80 backdrop-blur-xl border border-border py-4 px-6' : 'bg-transparent py-6 px-4'}`}
+        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-48px)] max-w-[1320px] transition-all duration-300 ease-out rounded-full shadow-lg ${scrolled ? 'bg-black/60 backdrop-blur-xl border border-white/10 py-4 px-6' : 'bg-black/10 backdrop-blur-md border border-white/5 py-6 px-4'}`}
       >
         <div className="flex items-center justify-between">
           <div className="font-heading font-semibold text-xl tracking-[-0.04em] text-light">
