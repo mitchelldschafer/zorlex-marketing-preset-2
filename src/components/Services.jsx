@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Services() {
   const comp = useRef(null);
@@ -9,32 +10,32 @@ export default function Services() {
   const services = [
     {
       num: "01",
-      title: "Website Design",
+      title: "Website Design and Development",
+      slug: "website-design-development",
       desc: "Award-winning interface design with an emphasis on conversion and cinematic flow."
     },
     {
       num: "02",
-      title: "Web Development",
-      desc: "High-performance, scalable platforms engineered with modern stacks (React, Tailwind, GSAP)."
-    },
-    {
-      num: "03",
       title: "Digital Strategy",
+      slug: "digital-strategy",
       desc: "Comprehensive roadmaps positioning your digital assets for maximum market impact."
     },
     {
-      num: "04",
+      num: "03",
       title: "SEO Optimization",
+      slug: "seo",
       desc: "Technical and content-driven search engine mastery to ensure your site is found."
     },
     {
-      num: "05",
+      num: "04",
       title: "Branding",
+      slug: "branding",
       desc: "Cohesive, sophisticated visual identities that separate your business from the noise."
     },
     {
-      num: "06",
+      num: "05",
       title: "Maintenance",
+      slug: "maintenance",
       desc: "Ongoing optimization, security, and updates to keep your digital engine running flawlessly."
     }
   ];
@@ -80,7 +81,11 @@ export default function Services() {
         {/* Services Grid */}
         <div className="services-grid grid grid-cols-1 md:grid-cols-2 gap-6">
           {services.map((svc, i) => (
-            <div key={i} className="service-card bg-light-surface rounded-[24px] p-8 md:p-12 group cursor-pointer hover:-translate-y-2 transition-transform duration-500 shadow-sm hover:shadow-md border border-border/40 relative overflow-hidden">
+            <Link 
+              key={i} 
+              to={`/services/${svc.slug}`}
+              className="service-card block bg-light-surface rounded-[24px] p-8 md:p-12 group cursor-pointer hover:-translate-y-2 transition-transform duration-500 shadow-sm hover:shadow-md border border-border/40 relative overflow-hidden"
+            >
               <div className="flex flex-col h-full justify-between relative z-10">
                 <div className="font-mono text-accent text-xl font-semibold mb-12">{svc.num}</div>
                 <div>
@@ -92,7 +97,7 @@ export default function Services() {
               <div className="absolute bottom-8 right-8 md:bottom-12 md:right-12 w-12 h-12 rounded-full bg-light flex items-center justify-center transform transition-transform duration-300 group-hover:bg-accent group-hover:text-white shadow-sm">
                 <ArrowRight size={24} className="transform transition-transform duration-300 group-hover:translate-x-1" />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
