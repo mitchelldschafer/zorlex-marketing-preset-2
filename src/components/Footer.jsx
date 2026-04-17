@@ -14,32 +14,32 @@ export default function Footer() {
 
           <div className="col-span-1 md:col-span-1 flex flex-col gap-4">
             <h4 className="font-mono text-light/50 text-xs uppercase tracking-widest mb-2">Navigation</h4>
-            <a href="#work" className="font-body text-light/80 hover:text-accent transition-colors w-max">Work</a>
-            <a href="#services" className="font-body text-light/80 hover:text-accent transition-colors w-max">Services</a>
-            <a href="#about" className="font-body text-light/80 hover:text-accent transition-colors w-max">About</a>
-            <a href="#process" className="font-body text-light/80 hover:text-accent transition-colors w-max">Process</a>
-            <a href="#faq" className="font-body text-light/80 hover:text-accent transition-colors w-max">FAQ</a>
+            <a href="#work" className="font-body text-light/80 hover:text-accent transition-all duration-300 hover:translate-x-2 w-max">Work</a>
+            <a href="#services" className="font-body text-light/80 hover:text-accent transition-all duration-300 hover:translate-x-2 w-max">Services</a>
+            <a href="#about" className="font-body text-light/80 hover:text-accent transition-all duration-300 hover:translate-x-2 w-max">About</a>
+            <a href="#process" className="font-body text-light/80 hover:text-accent transition-all duration-300 hover:translate-x-2 w-max">Process</a>
+            <a href="#faq" className="font-body text-light/80 hover:text-accent transition-all duration-300 hover:translate-x-2 w-max">FAQ</a>
           </div>
 
           <div className="col-span-1 md:col-span-1 flex flex-col gap-4">
             <h4 className="font-mono text-light/50 text-xs uppercase tracking-widest mb-2">Social</h4>
             <div className="flex flex-col gap-4">
-              <a href="#" className="flex items-center gap-3 text-light/80 hover:text-accent transition-colors w-max group">
-                <Instagram size={18} className="transform transition-transform group-hover:-translate-y-1" /> <span>Instagram</span>
+              <a href="#" className="flex items-center gap-3 text-light/80 hover:text-accent transition-all duration-300 group w-max">
+                <Instagram size={18} className="transform transition-transform group-hover:-translate-y-1 group-hover:scale-110" /> <span className="group-hover:translate-x-1 transition-transform">Instagram</span>
               </a>
-              <a href="#" className="flex items-center gap-3 text-light/80 hover:text-accent transition-colors w-max group">
-                <Linkedin size={18} className="transform transition-transform group-hover:-translate-y-1" /> <span>LinkedIn</span>
+              <a href="#" className="flex items-center gap-3 text-light/80 hover:text-accent transition-all duration-300 group w-max">
+                <Linkedin size={18} className="transform transition-transform group-hover:-translate-y-1 group-hover:scale-110" /> <span className="group-hover:translate-x-1 transition-transform">LinkedIn</span>
               </a>
-              <a href="#" className="flex items-center gap-3 text-light/80 hover:text-accent transition-colors w-max group">
-                <Twitter size={18} className="transform transition-transform group-hover:-translate-y-1" /> <span>X / Twitter</span>
+              <a href="#" className="flex items-center gap-3 text-light/80 hover:text-accent transition-all duration-300 group w-max">
+                <Twitter size={18} className="transform transition-transform group-hover:-translate-y-1 group-hover:scale-110" /> <span className="group-hover:translate-x-1 transition-transform">X / Twitter</span>
               </a>
             </div>
           </div>
 
           <div className="col-span-1 md:col-span-1 flex flex-col gap-4">
             <h4 className="font-mono text-light/50 text-xs uppercase tracking-widest mb-2">Contact</h4>
-            <a href="mailto:hello@zorlex.com" className="font-body text-light/80 hover:text-accent transition-colors w-max block">hello@zorlex.com</a>
-            <a href="tel:+15550198273" className="font-body text-light/80 hover:text-accent transition-colors w-max block">+1 (555) 019-8273</a>
+            <a href="mailto:hello@zorlex.com" className="font-body text-light/80 hover:text-accent transition-all duration-300 hover:-translate-y-1 w-max block">hello@zorlex.com</a>
+            <a href="tel:+15550198273" className="font-body text-light/80 hover:text-accent transition-all duration-300 hover:-translate-y-1 w-max block">+1 (555) 019-8273</a>
           </div>
           
         </div>

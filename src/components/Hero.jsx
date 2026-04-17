@@ -34,7 +34,7 @@ export default function Hero() {
       </video>
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark/70 via-dark/40 to-dark/60 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-dark/90 pointer-events-none" />
 
       {/* Top Tag */}
       <div className="pill-tag px-4 py-1.5 rounded-full border border-accent/40 bg-accent/10 mt-8 mb-8 z-10">

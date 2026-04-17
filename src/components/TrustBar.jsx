@@ -53,23 +53,23 @@ export default function TrustBar() {
     <section ref={comp} className="w-full py-16 md:py-24 bg-dark-surface border-y border-border px-6 relative z-20">
       <div className="max-w-[1320px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 divide-y md:divide-y-0 md:divide-x divide-border">
         
-        <div className="flex flex-col items-center justify-center pt-6 md:pt-0">
-          <div className="stat-num text-5xl md:text-6xl font-heading font-semibold text-light mb-2 tracking-tight" data-target="150" data-suffix="+">0</div>
-          <div className="stat-label font-mono text-sm text-muted uppercase tracking-widest">Websites Launched</div>
+        <div className="flex flex-col items-center justify-center pt-6 md:pt-0 group cursor-default">
+          <div className="stat-num text-5xl md:text-6xl font-heading font-semibold text-light mb-2 tracking-tight transition-all duration-500 group-hover:scale-110 group-hover:text-accent/80" data-target="150" data-suffix="+">0</div>
+          <div className="stat-label font-mono text-sm text-muted uppercase tracking-widest transition-colors group-hover:text-light/50">Websites Launched</div>
         </div>
 
-        <div className="flex flex-col items-center justify-center pt-8 md:pt-0 relative">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-accent/5 rounded-full blur-2xl -z-10"></div>
-          <div className="stat-num text-5xl md:text-6xl font-heading font-semibold text-light mb-2 tracking-tight text-accent" data-target="40" data-prefix="$" data-suffix="M+">0</div>
-          <div className="stat-label flex items-center gap-2 font-mono text-sm text-muted uppercase tracking-widest">
+        <div className="flex flex-col items-center justify-center pt-8 md:pt-0 relative group cursor-default">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-accent/5 rounded-full blur-2xl -z-10 transition-transform duration-700 group-hover:scale-150 group-hover:bg-accent/10"></div>
+          <div className="stat-num text-5xl md:text-6xl font-heading font-semibold text-light mb-2 tracking-tight text-accent transition-transform duration-500 group-hover:scale-110" data-target="40" data-prefix="$" data-suffix="M+">0</div>
+          <div className="stat-label flex items-center gap-2 font-mono text-sm text-muted uppercase tracking-widest transition-colors group-hover:text-light/50">
             <span className="w-2 h-2 rounded-full bg-accent relative"><span className="absolute inset-0 rounded-full bg-accent animate-ping opacity-75"></span></span>
             Client Revenue
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center pt-8 md:pt-0">
-          <div className="stat-num text-5xl md:text-6xl font-heading font-semibold text-light mb-2 tracking-tight" data-target="98" data-suffix="%">0</div>
-          <div className="stat-label font-mono text-sm text-muted uppercase tracking-widest">Client Retention</div>
+        <div className="flex flex-col items-center justify-center pt-8 md:pt-0 group cursor-default">
+          <div className="stat-num text-5xl md:text-6xl font-heading font-semibold text-light mb-2 tracking-tight transition-all duration-500 group-hover:scale-110 group-hover:text-accent/80" data-target="98" data-suffix="%">0</div>
+          <div className="stat-label font-mono text-sm text-muted uppercase tracking-widest transition-colors group-hover:text-light/50">Client Retention</div>
         </div>
 
       </div>
