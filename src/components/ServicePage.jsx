@@ -7,6 +7,10 @@ import SEOCards from './SEOCards';
 import DigitalStrategyCards from './DigitalStrategyCards';
 import SignalAmplificationSVG from './SignalAmplificationSVG';
 import ScatteredComponentsSVG from './ScatteredComponentsSVG';
+import BrandingSwatchesSVG from './BrandingSwatchesSVG';
+import MaintenancePulseSVG from './MaintenancePulseSVG';
+import BrandingCards from './BrandingCards';
+import MaintenanceCards from './MaintenanceCards';
 
 // NEW GOOGLE SHEET CSV URL HERE
 // Pointing specifically to the "websites" tab instead of the "projects" tab via gid=2134175586 & single=true
@@ -165,6 +169,12 @@ export default function ServicePage() {
             {slug === 'digital-strategy' && (
               <ScatteredComponentsSVG />
             )}
+            {slug === 'branding' && (
+              <BrandingSwatchesSVG />
+            )}
+            {slug === 'maintenance' && (
+              <MaintenancePulseSVG />
+            )}
           </div>
         </div>
         
@@ -230,6 +240,10 @@ export default function ServicePage() {
           <SEOCards />
         ) : slug === 'digital-strategy' ? (
           <DigitalStrategyCards />
+        ) : slug === 'branding' ? (
+          <BrandingCards />
+        ) : slug === 'maintenance' ? (
+          <MaintenanceCards />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div className="flex flex-col gap-8">
