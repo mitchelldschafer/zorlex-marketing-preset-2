@@ -24,12 +24,12 @@ export default function Cta() {
   }, []);
 
   return (
-    <section ref={comp} id="contact" className="w-full py-32 md:py-48 bg-dark px-6 flex items-center justify-center text-center relative">
+    <section ref={comp} id="contact" className="w-full py-20 md:py-48 bg-dark px-4 sm:px-6 flex items-center justify-center text-center relative">
       <div className="max-w-[700px] w-full flex flex-col items-center">
-        
-        <div className="cta-elem font-mono text-sm text-accent uppercase tracking-widest mb-6">Ready to start?</div>
-        
-        <h2 className="cta-elem text-5xl sm:text-6xl md:text-[80px] font-heading font-semibold text-light tracking-[-0.04em] leading-[1.05] mb-12">
+
+        <div className="cta-elem font-mono text-sm text-accent uppercase tracking-widest mb-5 md:mb-6">Ready to start?</div>
+
+        <h2 className="cta-elem text-3xl sm:text-5xl md:text-[80px] font-heading font-semibold text-light tracking-[-0.04em] leading-[1.1] md:leading-[1.05] mb-8 md:mb-12">
           Let's build something extraordinary.
         </h2>
         

@@ -51,10 +51,10 @@ export default function FAQ() {
   }, []);
 
   return (
-    <section id="faq" ref={comp} className="w-full py-24 md:py-40 bg-light px-6">
+    <section id="faq" ref={comp} className="w-full py-16 md:py-40 bg-light px-4 sm:px-6">
       <div className="max-w-[800px] mx-auto flex flex-col">
-        
-        <h2 className="faq-head text-5xl md:text-[64px] font-heading font-semibold text-dark tracking-[-0.04em] text-center mb-16 md:mb-24">
+
+        <h2 className="faq-head text-3xl sm:text-4xl md:text-[64px] font-heading font-semibold text-dark tracking-[-0.04em] text-center mb-10 md:mb-24">
           Frequently Asked Questions
         </h2>
 
@@ -76,7 +76,7 @@ export default function FAQ() {
               <div 
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${openIndex === i ? 'max-h-[300px] opacity-100 pb-8' : 'max-h-0 opacity-0'}`}
               >
-                <p className="font-body text-[18px] text-dark/70 leading-relaxed pr-10">
+                <p className="font-body text-base md:text-[18px] text-dark/70 leading-relaxed pr-4 md:pr-10">
                   {faq.a}
                 </p>
               </div>

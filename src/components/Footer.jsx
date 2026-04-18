@@ -2,12 +2,12 @@ import { Instagram, Linkedin, Twitter } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-dark-surface px-6 pt-24 pb-12 rounded-t-[3rem] border-t border-border/10">
+    <footer className="w-full bg-dark-surface px-4 sm:px-6 pt-14 md:pt-24 pb-10 md:pb-12 rounded-t-[2rem] md:rounded-t-[3rem] border-t border-border/10">
       <div className="max-w-[1320px] mx-auto">
-        
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-24">
-          
-          <div className="col-span-1 md:col-span-1 flex flex-col">
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-8 mb-14 md:mb-24">
+
+          <div className="col-span-2 md:col-span-1 flex flex-col">
             <div className="flex items-center gap-2 mb-2">
               <img src="/Logo.png" alt="Zorlex AI" className="h-10 w-10 rounded" />
               <h3 className="font-heading font-semibold text-3xl text-light tracking-[-0.04em]">Zorlex AI</h3>

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { Search, PenTool, Code2, Rocket } from 'lucide-react';
+import { Search, PenTool, Code as Code2, Rocket } from 'lucide-react';
 
 const processSteps = [
   {
@@ -38,33 +38,33 @@ export default function ProcessPage() {
   }, []);
 
   return (
-    <div ref={container} className="min-h-screen bg-dark pt-40 pb-32 px-6">
+    <div ref={container} className="min-h-screen bg-dark pt-28 md:pt-40 pb-16 md:pb-32 px-4 sm:px-6">
       <div className="max-w-[1320px] mx-auto">
-        
+
         {/* Header Section */}
-        <div className="process-header mb-24 max-w-[800px]">
-          <h1 className="text-5xl md:text-8xl font-heading font-semibold text-light mb-8 tracking-[-0.04em]">
+        <div className="process-header mb-12 md:mb-24 max-w-[800px]">
+          <h1 className="text-3xl sm:text-5xl md:text-8xl font-heading font-semibold text-light mb-5 md:mb-8 tracking-[-0.04em]">
             Technical <span className="italic font-light text-accent">precision.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/70 font-body leading-relaxed">
+          <p className="text-base sm:text-xl md:text-2xl text-white/70 font-body leading-relaxed">
             Our methodology is designed for predictable, high-end results. We follow a rigorous four-phase engineering cycle to move from initial concept to global scale.
           </p>
         </div>
 
         {/* Steps Grid */}
-        <div className="flex flex-col gap-12">
+        <div className="flex flex-col gap-5 md:gap-12">
           {processSteps.map((step, i) => (
-            <div key={i} className="process-step group grid grid-cols-1 lg:grid-cols-12 gap-8 items-start p-12 bg-dark-surface rounded-[40px] border border-white/5 hover:border-accent/30 transition-all duration-500">
+            <div key={i} className="process-step group grid grid-cols-1 lg:grid-cols-12 gap-5 md:gap-8 items-start p-6 sm:p-8 md:p-12 bg-dark-surface rounded-[24px] md:rounded-[40px] border border-white/5 hover:border-accent/30 transition-all duration-500">
               <div className="lg:col-span-1">
-                <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-accent/10 transition-colors duration-500">
+                <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-accent/10 transition-colors duration-500">
                   {step.icon}
                 </div>
               </div>
-              <div className="lg:col-span-11 flex flex-col gap-4">
-                <h3 className="text-3xl font-heading font-semibold text-white group-hover:text-accent transition-colors duration-300">
+              <div className="lg:col-span-11 flex flex-col gap-3 md:gap-4">
+                <h3 className="text-2xl md:text-3xl font-heading font-semibold text-white group-hover:text-accent transition-colors duration-300">
                   {step.title}
                 </h3>
-                <p className="text-xl text-white/60 leading-relaxed font-body max-w-[900px]">
+                <p className="text-base md:text-xl text-white/60 leading-relaxed font-body max-w-[900px]">
                   {step.description}
                 </p>
               </div>

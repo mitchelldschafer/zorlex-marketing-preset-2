@@ -63,31 +63,31 @@ export default function Process() {
   }, []);
 
   return (
-    <section ref={comp} id="process" className="w-full bg-dark py-24 md:py-40 px-6 relative">
+    <section ref={comp} id="process" className="w-full bg-dark py-16 md:py-40 px-4 sm:px-6 relative">
       <div className="max-w-[1320px] mx-auto">
-        <div className="mb-20">
-          <h2 className="text-5xl md:text-7xl font-heading font-semibold text-light tracking-[-0.04em] text-center">How We Work</h2>
+        <div className="mb-12 md:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-7xl font-heading font-semibold text-light tracking-[-0.04em] text-center">How We Work</h2>
         </div>
-        
-        <div className="flex flex-col gap-12 md:gap-0 relative">
+
+        <div className="flex flex-col gap-6 md:gap-0 relative">
           {steps.map((step, i) => (
-            <div 
-              key={i} 
-              className="process-card w-full min-h-[60vh] md:min-h-[100vh] bg-dark-surface rounded-[32px] md:sticky md:top-0 flex flex-col justify-center p-10 md:p-20 border border-border/10 overflow-hidden"
+            <div
+              key={i}
+              className="process-card w-full min-h-[auto] md:min-h-[100vh] bg-dark-surface rounded-[24px] md:rounded-[32px] md:sticky md:top-0 flex flex-col justify-center p-6 sm:p-10 md:p-20 border border-border/10 overflow-hidden"
               style={{ zIndex: i }}
             >
-              
+
               {/* Background Animations */}
-              <div className="absolute inset-0 z-0 opacity-20 pointer-events-none overflow-hidden flex items-center justify-end pr-10 md:pr-40">
+              <div className="absolute inset-0 z-0 opacity-20 pointer-events-none overflow-hidden flex items-center justify-end pr-6 md:pr-40">
                 {i === 0 && (
-                  <svg viewBox="0 0 200 200" className="w-[300px] h-[300px] md:w-[600px] md:h-[600px] animate-[spin_20s_linear_infinite]">
+                  <svg viewBox="0 0 200 200" className="w-[160px] h-[160px] sm:w-[240px] sm:h-[240px] md:w-[600px] md:h-[600px] animate-[spin_20s_linear_infinite]">
                     <circle cx="100" cy="100" r="90" fill="none" stroke="currentColor" className="text-accent" strokeWidth="1" strokeDasharray="4 8" />
                     <circle cx="100" cy="100" r="70" fill="none" stroke="currentColor" className="text-accent" strokeWidth="1" strokeDasharray="2 6" />
                     <circle cx="100" cy="100" r="50" fill="none" stroke="currentColor" className="text-accent" strokeWidth="0.5" />
                   </svg>
                 )}
                 {i === 1 && (
-                  <div className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] relative">
+                  <div className="w-[160px] h-[160px] sm:w-[260px] sm:h-[260px] md:w-[500px] md:h-[500px] relative">
                     <div className="absolute inset-0 grid grid-cols-10 grid-rows-10 gap-2">
                       {Array(100).fill(0).map((_, j) => <div key={j} className="w-1.5 h-1.5 bg-accent rounded-full opacity-30"></div>)}
                     </div>
@@ -95,14 +95,14 @@ export default function Process() {
                   </div>
                 )}
                 {i === 2 && (
-                  <svg viewBox="0 0 400 200" className="w-[400px] h-[200px] md:w-[800px] md:h-[400px]">
+                  <svg viewBox="0 0 400 200" className="w-[200px] h-[100px] sm:w-[320px] sm:h-[160px] md:w-[800px] md:h-[400px]">
                     <path d="M0,100 Q50,0 100,100 T200,100 T300,100 T400,100" fill="none" stroke="currentColor" className="text-accent" strokeWidth="4" strokeDasharray="800" strokeDashoffset="0">
                       <animate attributeName="stroke-dashoffset" values="800;0" dur="3s" repeatCount="indefinite" />
                     </path>
                   </svg>
                 )}
                 {i === 3 && (
-                  <div className="w-[300px] h-[300px] md:w-[600px] md:h-[600px] rounded-full border border-accent/20 relative animate-[spin_10s_linear_infinite]">
+                  <div className="w-[160px] h-[160px] sm:w-[260px] sm:h-[260px] md:w-[600px] md:h-[600px] rounded-full border border-accent/20 relative animate-[spin_10s_linear_infinite]">
                     <div className="absolute top-0 left-1/2 w-4 h-4 bg-accent rounded-full -translate-x-1/2 -translate-y-1/2 shadow-[0_0_20px_5px_rgba(123,107,255,0.8)]"></div>
                     <div className="absolute bottom-0 right-1/4 w-3 h-3 bg-accent/70 rounded-full translate-x-1/2 translate-y-1/2 shadow-[0_0_15px_3px_rgba(123,107,255,0.6)]"></div>
                   </div>
@@ -115,10 +115,10 @@ export default function Process() {
                 `}} />
               </div>
 
-              <div className="relative z-10 max-w-[800px]">
-                <div className="font-mono text-accent text-sm tracking-widest uppercase mb-12">{step.num}</div>
-                <h3 className="font-heading text-5xl md:text-7xl lg:text-[80px] font-semibold text-light mb-8 tracking-tight">{step.title}</h3>
-                <p className="font-body text-xl md:text-2xl text-muted leading-[1.6] max-w-[600px]">{step.desc}</p>
+              <div className="relative z-10 max-w-[800px] py-8 md:py-0">
+                <div className="font-mono text-accent text-xs sm:text-sm tracking-widest uppercase mb-6 md:mb-12">{step.num}</div>
+                <h3 className="font-heading text-3xl sm:text-4xl md:text-7xl lg:text-[80px] font-semibold text-light mb-4 md:mb-8 tracking-tight">{step.title}</h3>
+                <p className="font-body text-base sm:text-lg md:text-xl text-muted leading-[1.6] max-w-[600px]">{step.desc}</p>
               </div>
             </div>
           ))}

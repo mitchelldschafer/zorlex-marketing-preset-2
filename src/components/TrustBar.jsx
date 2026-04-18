@@ -50,8 +50,8 @@ export default function TrustBar() {
   }, []);
 
   return (
-    <section ref={comp} className="w-full py-16 md:py-24 bg-dark-surface border-y border-border px-6 relative z-20">
-      <div className="max-w-[1320px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 divide-y md:divide-y-0 md:divide-x divide-border">
+    <section ref={comp} className="w-full py-12 md:py-24 bg-dark-surface border-y border-border px-4 sm:px-6 relative z-20">
+      <div className="max-w-[1320px] mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-6 divide-y sm:divide-y-0 sm:divide-x divide-border">
         
         <div className="flex flex-col items-center justify-center pt-6 md:pt-0 group cursor-default">
           <div className="stat-num text-5xl md:text-6xl font-heading font-semibold text-light mb-2 tracking-tight transition-all duration-500 group-hover:scale-110 group-hover:text-accent/80" data-target="150" data-suffix="+">0</div>

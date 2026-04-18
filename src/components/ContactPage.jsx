@@ -15,20 +15,20 @@ export default function ContactPage() {
   }, []);
 
   return (
-    <div ref={container} className="min-h-screen bg-dark pt-40 pb-32 px-6">
+    <div ref={container} className="min-h-screen bg-dark pt-28 md:pt-40 pb-16 md:pb-32 px-4 sm:px-6">
       <div className="max-w-[1320px] mx-auto">
-        
+
         {/* Header Section */}
-        <div className="contact-header mb-24 max-w-[800px]">
-          <h1 className="text-5xl md:text-8xl font-heading font-semibold text-light mb-8 tracking-[-0.04em]">
+        <div className="contact-header mb-12 md:mb-24 max-w-[800px]">
+          <h1 className="text-3xl sm:text-5xl md:text-8xl font-heading font-semibold text-light mb-5 md:mb-8 tracking-[-0.04em]">
             Start a <span className="italic font-light text-accent">project.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/70 font-body leading-relaxed">
-            Ready to eclipse the competition? Tell us about your vision. We’re ready to architect your next digital advantage.
+          <p className="text-base sm:text-xl md:text-2xl text-white/70 font-body leading-relaxed">
+            Ready to eclipse the competition? Tell us about your vision. We're ready to architect your next digital advantage.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20">
           
           {/* Contact Form Tier */}
           <div className="flex flex-col gap-8">
@@ -67,25 +67,25 @@ export default function ContactPage() {
 
           {/* Contact Details Tier */}
           <div className="flex flex-col gap-12">
-            <div className="contact-form-item p-12 bg-accent/5 rounded-[40px] border border-accent/10 flex flex-col gap-6">
+            <div className="contact-form-item p-7 sm:p-10 md:p-12 bg-accent/5 rounded-[28px] md:rounded-[40px] border border-accent/10 flex flex-col gap-5 md:gap-6">
               <div className="w-14 h-14 rounded-2xl bg-accent/20 flex items-center justify-center">
                 <Mail className="text-accent" size={28} />
               </div>
               <h3 className="text-2xl font-heading font-semibold text-white">General Inquiries</h3>
               <p className="text-white/60 font-body leading-relaxed">For general questions or partnership opportunities, reach out via our direct channel.</p>
-              <a href="mailto:hello@zorlex.com" className="text-xl text-accent font-medium hover:text-white transition-colors flex items-center gap-2 group">
+              <a href="mailto:hello@zorlex.com" className="text-base sm:text-xl text-accent font-medium hover:text-white transition-colors flex items-center gap-2 group">
                 hello@zorlex.com
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-2" />
               </a>
             </div>
 
-            <div className="contact-form-item p-12 bg-white/5 rounded-[40px] border border-white/5 flex flex-col gap-6">
+            <div className="contact-form-item p-7 sm:p-10 md:p-12 bg-white/5 rounded-[28px] md:rounded-[40px] border border-white/5 flex flex-col gap-5 md:gap-6">
               <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center">
                 <MessageSquare className="text-light-surface" size={28} />
               </div>
               <h3 className="text-2xl font-heading font-semibold text-white">Client Support</h3>
               <p className="text-white/60 font-body leading-relaxed">Current clients needing technical assistance or maintenance updates.</p>
-              <a href="mailto:support@zorlex.com" className="text-xl text-white font-medium hover:text-accent transition-colors flex items-center gap-2 group">
+              <a href="mailto:support@zorlex.com" className="text-base sm:text-xl text-white font-medium hover:text-accent transition-colors flex items-center gap-2 group">
                 support@zorlex.com
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-2" />
               </a>
