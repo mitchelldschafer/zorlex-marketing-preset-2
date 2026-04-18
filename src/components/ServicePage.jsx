@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, X } from 'lucide-react';
 import { gsap } from 'gsap';
+import BrowserMockupSVG from './BrowserMockupSVG';
 
 // NEW GOOGLE SHEET CSV URL HERE
 // Pointing specifically to the "websites" tab instead of the "projects" tab via gid=2134175586 & single=true
@@ -149,15 +150,10 @@ export default function ServicePage() {
             </h1>
           </div>
           
-          {/* Right Side: Interactive Animated SVG */}
+          {/* Right Side: Interactive Animated component */}
           <div className="w-full flex justify-center lg:justify-end">
             {slug === 'website-design-development' && (
-              <object 
-                type="image/svg+xml" 
-                data="/browser_mockup_animated.svg" 
-                className="w-full max-w-[600px] h-auto filter drop-shadow-[0_20px_50px_rgba(79,70,229,0.15)]"
-                aria-label="Browser Mockup Animation"
-              />
+              <BrowserMockupSVG />
             )}
           </div>
         </div>
