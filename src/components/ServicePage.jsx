@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, X } from 'lucide-react';
 import { gsap } from 'gsap';
 import BrowserMockupSVG from './BrowserMockupSVG';
+import SEOCards from './SEOCards';
 
 // NEW GOOGLE SHEET CSV URL HERE
 // Pointing specifically to the "websites" tab instead of the "projects" tab via gid=2134175586 & single=true
@@ -216,6 +217,8 @@ export default function ServicePage() {
               ))}
             </div>
           )
+        ) : slug === 'seo' ? (
+          <SEOCards />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div className="flex flex-col gap-8">
