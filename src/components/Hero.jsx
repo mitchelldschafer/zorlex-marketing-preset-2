@@ -37,9 +37,10 @@ export default function Hero() {
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-dark/90 pointer-events-none" />
 
-      {/* Top Tag */}
-      <div className="pill-tag px-4 py-1.5 rounded-full border border-accent/40 bg-accent/10 mt-8 mb-8 z-10">
-        <span className="font-mono text-accent text-xs tracking-widest uppercase font-medium">✦ Elevating Digital Outcomes</span>
+      {/* Top Tag with Logo */}
+      <div className="pill-tag flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/40 bg-accent/10 mt-8 mb-8 z-10">
+        <img src="/zorlex-logo.png" alt="Zorlex AI" className="h-5 w-5" />
+        <span className="font-mono text-accent text-xs tracking-widest uppercase font-medium">Zorlex AI - Elevating Digital Outcomes</span>
       </div>
 
       {/* Massive Headline */}

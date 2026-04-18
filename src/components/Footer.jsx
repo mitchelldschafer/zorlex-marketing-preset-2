@@ -8,7 +8,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-24">
           
           <div className="col-span-1 md:col-span-1 flex flex-col">
-            <h3 className="font-heading font-semibold text-3xl text-light mb-2 tracking-[-0.04em]">Zorlex</h3>
+            <div className="flex items-center gap-2 mb-2">
+              <img src="/zorlex-logo.png" alt="Zorlex AI" className="h-10 w-10" />
+              <h3 className="font-heading font-semibold text-3xl text-light tracking-[-0.04em]">Zorlex AI</h3>
+            </div>
             <p className="font-body text-muted text-sm">Elevating Digital Outcomes</p>
           </div>
 
@@ -45,7 +48,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between border-t border-border/10 pt-8 gap-4">
-          <p className="font-body text-muted text-sm">© 2026 Zorlex. All rights reserved.</p>
+          <p className="font-body text-muted text-sm">© 2026 Zorlex AI. All rights reserved.</p>
           <div className="flex items-center gap-2 font-mono text-xs text-muted">
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-[pulse_2s_ease-in-out_infinite]"></span>
             System Operational

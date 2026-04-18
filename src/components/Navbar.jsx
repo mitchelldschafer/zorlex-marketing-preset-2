@@ -36,8 +36,9 @@ export default function Navbar() {
         className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-48px)] max-w-[1320px] transition-all duration-300 ease-out rounded-full shadow-lg ${scrolled ? 'bg-black/60 backdrop-blur-xl border border-white/10 py-4 px-6' : 'bg-black/10 backdrop-blur-md border border-white/5 py-6 px-4'}`}
       >
         <div className="flex items-center justify-between">
-          <Link to="/" className="font-heading font-semibold text-xl tracking-[-0.04em] text-light">
-            Zorlex
+          <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <img src="/zorlex-logo.png" alt="Zorlex AI" className="h-8 w-8" />
+            <span className="font-heading font-semibold text-xl tracking-[-0.04em] text-light">Zorlex AI</span>
           </Link>
           
           <div className="hidden md:flex items-center gap-8 font-body text-sm text-light/80">
