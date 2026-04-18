@@ -68,14 +68,20 @@ export default function Pricing() {
       });
 
       // Cards staggered animation
-      gsap.from(".pricing-card", {
-        y: 50,
-        opacity: 0,
-        stagger: 0.15,
-        duration: 1,
-        ease: "power4.out",
-        delay: 0.2
-      });
+      gsap.fromTo(".pricing-card", 
+        { 
+          y: 50, 
+          opacity: 0 
+        },
+        { 
+          y: 0, 
+          opacity: 1, 
+          stagger: 0.15, 
+          duration: 1, 
+          ease: "power4.out", 
+          delay: 0.2 
+        }
+      );
     }, containerRef);
     
     return () => ctx.revert();
@@ -86,7 +92,7 @@ export default function Pricing() {
       <div className="max-w-[1320px] mx-auto">
         
         {/* Header Section */}
-        <div className="pricing-header text-center mb-20">
+        <div className="pricing-header opacity-0 text-center mb-20">
           <h1 className="text-5xl md:text-7xl font-heading font-semibold text-light mb-8 tracking-[-0.04em]">
             Two ways to <span className="italic font-light">begin.</span>
           </h1>
@@ -122,7 +128,7 @@ export default function Pricing() {
           {pricingData.map((pkg, i) => (
             <div 
               key={i}
-              className={`pricing-card relative flex flex-col p-10 rounded-[32px] border transition-all duration-500 group ${pkg.highlight ? 'bg-dark-surface/80 border-accent shadow-[0_0_40px_rgba(123,107,255,0.1)]' : 'bg-dark-surface border-border/10 hover:border-white/20'}`}
+              className={`pricing-card opacity-0 relative flex flex-col p-10 rounded-[32px] border transition-all duration-500 group ${pkg.highlight ? 'bg-dark-surface/80 border-accent shadow-[0_0_40px_rgba(123,107,255,0.1)]' : 'bg-dark-surface border-border/10 hover:border-white/20'}`}
             >
               {pkg.tag && (
                 <div className="absolute top-6 right-6 bg-white/5 border border-white/10 px-3 py-1 rounded-full text-[10px] font-mono tracking-widest text-white/50">
