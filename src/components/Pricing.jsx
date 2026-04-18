@@ -88,7 +88,7 @@ export default function Pricing() {
   }, []);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-dark pt-40 pb-32 px-6">
+    <div ref={containerRef} className="min-h-screen bg-dark pt-16 pb-32 px-6">
       <div className="max-w-[1320px] mx-auto">
         
         {/* Header Section */}

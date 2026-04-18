@@ -53,8 +53,6 @@ export default function Process() {
               scrub: true
             },
             scale: 0.92,
-            opacity: 0.4,
-            filter: "blur(12px)",
             ease: "none"
           });
         }

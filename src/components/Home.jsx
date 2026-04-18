@@ -17,11 +17,8 @@ export default function Home() {
       <TrustBar />
       <SocialProof />
       <Manifesto />
-      <Portfolio />
-      <Features />
       <Services />
       <Process />
-      <Testimonials />
       <FAQ />
       <Cta />
     </>
