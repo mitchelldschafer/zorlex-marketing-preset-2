@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft, X } from 'lucide-react';
 import { gsap } from 'gsap';
 
 // NEW GOOGLE SHEET CSV URL HERE
@@ -10,7 +10,9 @@ const CMS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSQh7STGpeU
 export default function ServicePage() {
   const { slug } = useParams();
   const [projects, setProjects] = useState([]);
+  const [selectedProject, setSelectedProject] = useState(null);
   const gridRef = useRef(null);
+  const modalRef = useRef(null);
   const [loading, setLoading] = useState(true);
   
   // Map slug to human readable title
@@ -64,10 +66,11 @@ export default function ServicePage() {
             let coverUrl = isNewFormat ? r[5] : r[6];
             coverUrl = coverUrl || '';
             
+            // Fix Google Drive Embed URLs
             if (coverUrl.includes('drive.google.com/file/d/')) {
               const idMatch = coverUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
               if (idMatch && idMatch[1]) {
-                coverUrl = `https://drive.google.com/uc?export=view&id=${idMatch[1]}`;
+                coverUrl = `https://drive.google.com/thumbnail?id=${idMatch[1]}&sz=w1000`;
               }
             }
 
@@ -86,6 +89,8 @@ export default function ServicePage() {
               clientName: clientName,
               industry: industry,
               shortDesc: isNewFormat ? r[3] : r[1],
+              fullDesc: isNewFormat ? r[4] : r[2], // Map full description correctly depending on format
+              liveUrl: isNewFormat ? r[6] : r[7],
               skills: stackTags,
               coverUrl
             };
@@ -114,8 +119,17 @@ export default function ServicePage() {
     }
   }, [loading, projects]);
 
+  useEffect(() => {
+    if (selectedProject && modalRef.current) {
+      gsap.fromTo(modalRef.current,
+        { opacity: 0, scale: 0.95 },
+        { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" }
+      );
+    }
+  }, [selectedProject]);
+
   return (
-    <div className="min-h-screen bg-dark pt-32 pb-20 px-6">
+    <div className="min-h-screen bg-dark pt-32 pb-20 px-6 relative">
       <div className="max-w-[1320px] mx-auto">
         <Link to="/" className="flex items-center gap-2 text-accent mb-12 hover:-translate-x-1 transition-transform w-fit font-body">
           <ArrowLeft size={20} />
@@ -175,10 +189,13 @@ export default function ServicePage() {
                       ))}
                     </div>
                     
-                    <div className="mt-auto flex items-center gap-2 text-accent font-body text-sm font-semibold group-hover:gap-3 transition-all duration-300 cursor-pointer">
+                    <button 
+                      onClick={() => setSelectedProject(proj)}
+                      className="mt-auto flex items-center gap-2 text-accent font-body text-sm font-semibold hover:gap-3 transition-all duration-300"
+                    >
                       View Details
                       <ArrowLeft size={16} className="rotate-180" />
-                    </div>
+                    </button>
                   </div>
                   
                 </div>
@@ -207,6 +224,99 @@ export default function ServicePage() {
             </div>
           </div>
         )}
+
+        {/* Lightbox Modal Overlay */}
+        {selectedProject && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-12 bg-dark/80 backdrop-blur-md">
+            <div 
+              ref={modalRef} 
+              className="relative w-full max-w-[900px] max-h-[90vh] bg-dark-surface border border-border/20 rounded-[32px] flex flex-col overflow-hidden shadow-2xl"
+            >
+              {/* Close Button */}
+              <button 
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-6 right-6 z-10 w-12 h-12 bg-dark/50 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center text-white/80 hover:text-white hover:bg-dark/80 transition-colors"
+              >
+                <X size={24} />
+              </button>
+
+              {/* Modal Content Scroll Area */}
+              <div className="overflow-y-auto w-full h-full custom-scrollbar">
+                
+                {/* Hero Image */}
+                <div className="w-full h-[300px] md:h-[400px] relative bg-[#0A0A0A]">
+                  <img 
+                    src={selectedProject.coverUrl || 'https://images.unsplash.com/photo-1620121692029-d088224ddc74?auto=format&fit=crop&w=1200&q=80'} 
+                    alt={selectedProject.title}
+                    className="absolute inset-0 w-full h-full object-cover opacity-90"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark-surface via-transparent to-transparent"></div>
+                  <div className="absolute left-8 md:left-12 bottom-8">
+                    <div className="bg-accent/20 backdrop-blur-md text-accent border border-accent/20 px-4 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase mb-4 w-fit">
+                      {selectedProject.industry}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Details Section */}
+                <div className="p-8 md:p-12 flex flex-col gap-8">
+                  <div>
+                    <div className="font-mono text-xs text-white/50 uppercase tracking-widest font-semibold mb-2">
+                      Client: <span className="text-accent">{selectedProject.clientName}</span>
+                    </div>
+                    <h2 className="font-heading text-4xl md:text-5xl font-semibold text-white tracking-tight">
+                      {selectedProject.title}
+                    </h2>
+                  </div>
+
+                  <div className="h-[1px] w-full bg-border/10"></div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    {/* Left Column: Descriptions */}
+                    <div className="md:col-span-2 flex flex-col gap-6">
+                      <div>
+                        <h4 className="font-heading text-xl text-white mb-3">Project Overview</h4>
+                        <p className="font-body text-white/70 text-lg leading-relaxed">
+                          {selectedProject.fullDesc || selectedProject.shortDesc || "No structured description was provided for this project."}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Right Column: Meta Info */}
+                    <div className="md:col-span-1 flex flex-col gap-8">
+                      <div>
+                        <h4 className="font-heading text-lg text-white mb-4">Tech Stack</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {selectedProject.skills.map((skill, si) => (
+                            <span key={si} className="px-3 py-1.5 bg-white/5 border border-white/10 text-white/90 text-xs font-mono rounded-full font-medium">
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      {selectedProject.liveUrl && selectedProject.liveUrl !== '[URL]' && (
+                        <div>
+                          <a 
+                            href={selectedProject.liveUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="inline-flex py-4 px-8 bg-accent text-white font-body font-semibold rounded-full items-center gap-3 hover:scale-[1.02] transition-transform"
+                          >
+                            Visit Live Site
+                            <ArrowLeft size={18} className="rotate-180" />
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
       </div>
     </div>
   );
