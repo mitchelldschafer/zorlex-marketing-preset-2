@@ -136,18 +136,18 @@ export default function ServicePage() {
           ) : (
             <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((proj, i) => (
-                <div key={i} className="cms-proj-card flex flex-col bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 group">
+                <div key={i} className="cms-proj-card flex flex-col bg-dark-surface rounded-[24px] overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-border/20 group">
                   
                   {/* Top Image Section */}
-                  <div className="relative w-full h-[240px] bg-gray-100 overflow-hidden">
+                  <div className="relative w-full h-[240px] overflow-hidden bg-[#0A0A0A]">
                     <img 
                       src={proj.coverUrl || 'https://images.unsplash.com/photo-1620121692029-d088224ddc74?auto=format&fit=crop&w=800&q=80'} 
                       alt={proj.title} 
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" 
                     />
                     
                     {/* Industry Pill Overlaid */}
-                    <div className="absolute left-4 bottom-4 bg-[#2C2C2C]/90 backdrop-blur-sm text-white/95 px-4 py-1.5 rounded-full text-[11px] font-mono tracking-wide uppercase shadow-md">
+                    <div className="absolute left-6 bottom-4 bg-white/10 backdrop-blur-md text-white/95 px-4 py-1.5 rounded-full text-[11px] font-mono tracking-wider uppercase border border-white/20">
                       {proj.industry}
                     </div>
                   </div>
@@ -155,27 +155,27 @@ export default function ServicePage() {
                   {/* Bottom Content Section */}
                   <div className="p-8 flex flex-col flex-grow">
                     
-                    <div className="font-mono text-[10px] text-blue-600 uppercase tracking-[0.2em] font-semibold mb-3">
+                    <div className="font-mono text-[11px] text-accent uppercase tracking-widest font-semibold mb-3">
                       {proj.clientName}
                     </div>
                     
-                    <h3 className="font-serif italic text-2xl text-slate-900 leading-tight mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                    <h3 className="font-heading text-2xl font-semibold text-white leading-tight mb-4 group-hover:text-accent transition-colors duration-300">
                       {proj.title}
                     </h3>
                     
-                    <p className="font-body text-slate-500 text-[15px] leading-relaxed mb-6 flex-grow">
+                    <p className="font-body text-white/70 text-[15px] leading-relaxed mb-6 flex-grow">
                       {proj.shortDesc}
                     </p>
                     
                     <div className="flex flex-wrap gap-2 mb-8">
                       {proj.skills.map((skill, si) => (
-                        <span key={si} className="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-mono rounded-md font-medium tracking-wide">
+                        <span key={si} className="px-3 py-1 bg-white/5 border border-white/10 text-white/90 text-[11px] font-mono rounded-full font-medium tracking-wide">
                           {skill}
                         </span>
                       ))}
                     </div>
                     
-                    <div className="mt-auto flex items-center gap-2 text-blue-600 font-body text-sm font-semibold group-hover:gap-3 transition-all duration-300">
+                    <div className="mt-auto flex items-center gap-2 text-accent font-body text-sm font-semibold group-hover:gap-3 transition-all duration-300 cursor-pointer">
                       View Details
                       <ArrowLeft size={16} className="rotate-180" />
                     </div>
