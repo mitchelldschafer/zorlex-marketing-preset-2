@@ -61,7 +61,7 @@ export default function ServicePage() {
             
             // Map indices dynamically
             const statusIdx = isNewFormat ? 15 : 8;
-            if (r[statusIdx] && r[statusIdx].trim().toLowerCase() !== 'publish') return null;
+            if (!r[statusIdx] || r[statusIdx].trim().toLowerCase() !== 'publish') return null;
 
             let coverUrl = isNewFormat ? r[5] : r[6];
             coverUrl = coverUrl || '';
@@ -129,8 +129,16 @@ export default function ServicePage() {
   }, [selectedProject]);
 
   return (
-    <div className="min-h-screen bg-dark pt-32 pb-20 px-6 relative">
-      <div className="max-w-[1320px] mx-auto">
+    <div className="min-h-screen bg-dark pt-32 pb-20 px-6 relative overflow-hidden">
+      {/* Dynamic Background SVG Overlay */}
+      {slug === 'website-design-development' && (
+        <div 
+          className="absolute top-[-5%] right-[-5%] w-full max-w-[1000px] h-[800px] pointer-events-none z-0 opacity-20"
+          style={{ backgroundImage: "url('/browser_mockup_animated.svg')", backgroundPosition: 'top right', backgroundRepeat: 'no-repeat', backgroundSize: 'contain' }}
+        />
+      )}
+      
+      <div className="max-w-[1320px] mx-auto relative z-10">
         <Link to="/" className="flex items-center gap-2 text-accent mb-12 hover:-translate-x-1 transition-transform w-fit font-body">
           <ArrowLeft size={20} />
           Back to Home
