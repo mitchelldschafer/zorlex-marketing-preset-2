@@ -4,8 +4,8 @@ import { ArrowLeft, X } from 'lucide-react';
 import { gsap } from 'gsap';
 
 // NEW GOOGLE SHEET CSV URL HERE
-// Example: 'https://docs.google.com/spreadsheets/d/e/2PAC.../pub?output=csv'
-const CMS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSQh7STGpeUU1gEjKFifVncLS0ATzDz8CM7qJcf6cl11Jn-Me5QrquN7Da5edNvseiAnhil-qoW0Cw4/pub?output=csv';
+// Pointing specifically to the "websites" tab instead of the "projects" tab via gid=2134175586 & single=true
+const CMS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSQh7STGpeUU1gEjKFifVncLS0ATzDz8CM7qJcf6cl11Jn-Me5QrquN7Da5edNvseiAnhil-qoW0Cw4/pub?gid=2134175586&single=true&output=csv';
 
 export default function ServicePage() {
   const { slug } = useParams();
