@@ -4,6 +4,7 @@ import { ArrowLeft, X } from 'lucide-react';
 import { gsap } from 'gsap';
 import BrowserMockupSVG from './BrowserMockupSVG';
 import SEOCards from './SEOCards';
+import DigitalStrategyCards from './DigitalStrategyCards';
 
 // NEW GOOGLE SHEET CSV URL HERE
 // Pointing specifically to the "websites" tab instead of the "projects" tab via gid=2134175586 & single=true
@@ -163,6 +164,13 @@ export default function ServicePage() {
                 className="w-full max-w-[600px] xl:max-w-[700px] h-auto object-contain opacity-90 drop-shadow-[0_0_40px_rgba(99,102,241,0.15)] hover:opacity-100 hover:drop-shadow-[0_0_60px_rgba(99,102,241,0.25)] transition-all duration-700" 
               />
             )}
+            {slug === 'digital-strategy' && (
+              <img 
+                src="/scattered_components_assembling.svg" 
+                alt="Digital Strategy Assembling" 
+                className="w-full max-w-[600px] xl:max-w-[700px] h-auto object-contain opacity-90 drop-shadow-[0_0_40px_rgba(99,102,241,0.15)] hover:opacity-100 hover:drop-shadow-[0_0_60px_rgba(99,102,241,0.25)] transition-all duration-700" 
+              />
+            )}
           </div>
         </div>
         
@@ -226,6 +234,8 @@ export default function ServicePage() {
           )
         ) : slug === 'seo' ? (
           <SEOCards />
+        ) : slug === 'digital-strategy' ? (
+          <DigitalStrategyCards />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div className="flex flex-col gap-8">
