@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   const container = useRef(null);
@@ -58,13 +59,13 @@ export default function Hero() {
 
       {/* Buttons */}
       <div className="z-10 flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
-        <button className="hero-btn relative overflow-hidden bg-accent text-dark font-body font-medium text-lg px-8 py-4 rounded-full group hover:scale-[1.03] w-full sm:w-[200px] transition-transform duration-300">
+        <Link to="/contact" className="hero-btn relative overflow-hidden bg-accent text-dark font-body font-medium text-lg px-8 py-4 rounded-full group hover:scale-[1.03] w-full sm:w-[200px] transition-transform duration-300 text-center">
           <span className="relative z-10 group-hover:text-white transition-colors duration-300">Start a Project</span>
           <div className="absolute inset-0 bg-dark transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></div>
-        </button>
-        <button className="hero-btn font-body font-medium text-lg px-8 py-4 rounded-full border border-border/50 text-light hover:bg-light/5 hover:border-border transition-colors w-full sm:w-[200px] hover:-translate-y-[2px] backdrop-blur-sm">
+        </Link>
+        <Link to="/services/website-design-development" className="hero-btn font-body font-medium text-lg px-8 py-4 rounded-full border border-border/50 text-light hover:bg-light/5 hover:border-border transition-colors w-full sm:w-[200px] hover:-translate-y-[2px] backdrop-blur-sm text-center">
           View Our Work
-        </button>
+        </Link>
       </div>
       
     </section>

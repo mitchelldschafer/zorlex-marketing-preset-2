@@ -61,16 +61,16 @@ export default function Navbar() {
               </div>
             </div>
 
-            <Link to="/#about" className="hover:text-accent transition-colors hover:-translate-y-[1px] transform">About</Link>
-            <Link to="/#process" className="hover:text-accent transition-colors hover:-translate-y-[1px] transform">Process</Link>
+            <Link to="/about" className="hover:text-accent transition-colors hover:-translate-y-[1px] transform">About</Link>
+            <Link to="/process" className="hover:text-accent transition-colors hover:-translate-y-[1px] transform">Process</Link>
             <Link to="/#faq" className="hover:text-accent transition-colors hover:-translate-y-[1px] transform">FAQ</Link>
           </div>
           
           <div className="hidden md:block">
-            <button className="relative overflow-hidden bg-accent text-dark font-body font-medium text-sm px-6 py-2.5 rounded-full group hover:scale-[1.03] transition-transform duration-300" style={{ transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)' }}>
+            <Link to="/contact" className="relative block overflow-hidden bg-accent text-dark font-body font-medium text-sm px-6 py-2.5 rounded-full group hover:scale-[1.03] transition-transform duration-300" style={{ transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)' }}>
               <span className="relative z-10 group-hover:text-white transition-colors duration-300">Start a Project</span>
               <div className="absolute inset-0 bg-dark transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></div>
-            </button>
+            </Link>
           </div>
 
           <button 
@@ -110,10 +110,10 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-          <Link to="/#about" onClick={() => setMobileMenuOpen(false)} className="hover:text-accent">About</Link>
-          <button className="mt-8 bg-accent text-dark px-8 py-4 rounded-full text-lg">
+          <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="hover:text-accent">About</Link>
+          <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="mt-8 bg-accent text-dark px-8 py-4 rounded-full text-lg block text-center">
             Start a Project
-          </button>
+          </Link>
         </div>
       </div>
     </>

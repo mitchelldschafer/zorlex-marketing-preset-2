@@ -1,21 +1,23 @@
-import { Shield, Zap, Circle, Hexagon, Triangle, Square, Database, Cloud } from 'lucide-react';
+import { Zap, Code2, MessageSquare, Brain, Sparkles, Share2, FileCode2, Database, Globe, Github } from 'lucide-react';
 
 export default function SocialProof() {
   const logos = [
-    { id: 1, icon: Shield, name: "SecureTech" },
-    { id: 2, icon: Zap, name: "FastPay" },
-    { id: 3, icon: Circle, name: "OmniCore" },
-    { id: 4, icon: Hexagon, name: "NexGen" },
-    { id: 5, icon: Triangle, name: "Delta AI" },
-    { id: 6, icon: Database, name: "DataFlow" },
-    { id: 7, icon: Cloud, name: "CloudSync" },
-    { id: 8, icon: Square, name: "BlockNet" }
+    { id: 1, icon: Zap, name: "bolt.new" },
+    { id: 2, icon: Code2, name: "replit" },
+    { id: 3, icon: MessageSquare, name: "ChatGPT" },
+    { id: 4, icon: Brain, name: "Claude code" },
+    { id: 5, icon: Sparkles, name: "Gemini" },
+    { id: 6, icon: Share2, name: "n8n" },
+    { id: 7, icon: FileCode2, name: "Python" },
+    { id: 8, icon: Database, name: "supabase" },
+    { id: 9, icon: Globe, name: "netlify" },
+    { id: 10, icon: Github, name: "github" }
   ];
 
   return (
     <section className="w-full py-16 bg-light border-b border-border/50 overflow-hidden relative z-10">
       <div className="text-center mb-10">
-        <p className="font-mono text-sm text-muted uppercase tracking-widest">Trusted by forward-thinking brands</p>
+        <p className="font-mono text-sm text-muted uppercase tracking-widest pl-2">Tools we work in</p>
       </div>
       
       {/* Marquee Container */}
