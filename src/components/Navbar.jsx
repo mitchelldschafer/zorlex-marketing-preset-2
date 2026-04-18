@@ -35,6 +35,7 @@ export default function Navbar() {
           
           <div className="hidden md:flex items-center gap-8 font-body text-sm text-light/80">
             <Link to="/#work" className="hover:text-accent transition-colors hover:-translate-y-[1px] transform">Work</Link>
+            <Link to="/pricing" className="hover:text-accent transition-colors hover:-translate-y-[1px] transform">Pricing</Link>
             
             {/* Services Dropdown */}
             <div 
@@ -95,6 +96,7 @@ export default function Navbar() {
         </div>
         <div className="flex flex-col items-center justify-center h-full gap-8 font-heading text-3xl font-semibold">
           <Link to="/#work" onClick={() => setMobileMenuOpen(false)} className="hover:text-accent">Work</Link>
+          <Link to="/pricing" onClick={() => setMobileMenuOpen(false)} className="hover:text-accent">Pricing</Link>
           <div className="flex flex-col items-center gap-4">
             <span className="text-muted text-sm font-mono uppercase tracking-widest">Services</span>
             {serviceLinks.map((link) => (
