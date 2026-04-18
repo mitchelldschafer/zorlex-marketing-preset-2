@@ -77,12 +77,14 @@ export default function ScatteredComponentsSVG() {
         <circle cx="200" cy="178" r="4" fill="#6366F1"/>
       </g>
 
-      <g className="scattered-part system-core" style={{transformOrigin: "340px 160px"}}>
-        <rect x="300" y="130" width="80" height="60" rx="8" fill="#4F46E5"/>
-        <circle cx="320" cy="160" r="8" fill="#ffffff"/>
-        <rect x="334" y="152" width="34" height="5" rx="2.5" fill="#ffffff"/>
-        <rect x="334" y="162" width="26" height="3" rx="1.5" fill="#93C5FD"/>
-        <rect x="334" y="170" width="20" height="3" rx="1.5" fill="#93C5FD"/>
+      <g className="scattered-part" style={{transformOrigin: "340px 160px"}}>
+        <g className="system-core" style={{transformOrigin: "340px 160px"}}>
+          <rect x="300" y="130" width="80" height="60" rx="8" fill="#4F46E5"/>
+          <circle cx="320" cy="160" r="8" fill="#ffffff"/>
+          <rect x="334" y="152" width="34" height="5" rx="2.5" fill="#ffffff"/>
+          <rect x="334" y="162" width="26" height="3" rx="1.5" fill="#93C5FD"/>
+          <rect x="334" y="170" width="20" height="3" rx="1.5" fill="#93C5FD"/>
+        </g>
       </g>
 
       <g className="scattered-part" style={{transformOrigin: "500px 160px"}}>
