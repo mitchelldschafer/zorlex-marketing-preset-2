@@ -30,13 +30,10 @@ export default function CustomAppCards() {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.from(".app-card", {
-        opacity: 0,
-        y: 40,
-        stagger: 0.15,
-        duration: 0.8,
-        ease: "power3.out"
-      });
+      gsap.fromTo(".app-card", 
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, stagger: 0.15, duration: 0.8, ease: "power3.out" }
+      );
     }, container);
     return () => ctx.revert();
   }, []);
@@ -44,7 +41,7 @@ export default function CustomAppCards() {
   return (
     <div ref={container} className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
       {cards.map((card, i) => (
-        <div key={i} className="app-card bg-dark-surface p-10 rounded-[32px] border border-white/5 hover:border-accent/30 transition-all duration-500 group">
+        <div key={i} className="app-card opacity-0 bg-dark-surface p-10 rounded-[32px] border border-white/5 hover:border-accent/30 transition-all duration-500 group">
           <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
             {card.icon}
           </div>

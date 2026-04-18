@@ -53,7 +53,7 @@ export default function DigitalStrategyCards() {
       {strategyFeatures.map((feature, i) => (
         <div 
           key={i} 
-          className="strategy-card bg-dark-surface p-8 rounded-[24px] border border-border/20 hover:border-accent/30 hover:shadow-[0_8px_30px_rgb(0,0,0,0.4)] transition-all duration-300 flex flex-col gap-6 group hover:-translate-y-1"
+          className="strategy-card opacity-0 bg-dark-surface p-8 rounded-[24px] border border-border/20 hover:border-accent/30 hover:shadow-[0_8px_30px_rgb(0,0,0,0.4)] transition-all duration-300 flex flex-col gap-6 group hover:-translate-y-1"
         >
           <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-accent/10 transition-all duration-300">
             {feature.icon}
