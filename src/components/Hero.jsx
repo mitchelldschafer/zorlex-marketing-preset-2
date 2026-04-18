@@ -39,7 +39,7 @@ export default function Hero() {
 
       {/* Top Tag with Logo */}
       <div className="pill-tag flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/40 bg-accent/10 mt-8 mb-8 z-10">
-        <img src="/zorlex-logo.png" alt="Zorlex AI" className="h-5 w-5" />
+        <img src="/zorlex-logo.svg" alt="Zorlex AI" className="h-5 w-5" />
         <span className="font-mono text-accent text-xs tracking-widest uppercase font-medium">Zorlex AI - Elevating Digital Outcomes</span>
       </div>
 

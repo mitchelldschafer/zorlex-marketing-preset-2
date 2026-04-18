@@ -9,7 +9,7 @@ export default function Footer() {
           
           <div className="col-span-1 md:col-span-1 flex flex-col">
             <div className="flex items-center gap-2 mb-2">
-              <img src="/zorlex-logo.png" alt="Zorlex AI" className="h-10 w-10" />
+              <img src="/zorlex-logo.svg" alt="Zorlex AI" className="h-10 w-10" />
               <h3 className="font-heading font-semibold text-3xl text-light tracking-[-0.04em]">Zorlex AI</h3>
             </div>
             <p className="font-body text-muted text-sm">Elevating Digital Outcomes</p>
