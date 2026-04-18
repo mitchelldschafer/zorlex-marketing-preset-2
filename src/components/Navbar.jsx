@@ -37,7 +37,7 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <img src="/zorlex-logo.svg" alt="Zorlex AI" className="h-8 w-8" />
+            <img src="/Logo.png" alt="Zorlex AI" className="h-8 w-8 rounded" />
             <span className="font-heading font-semibold text-xl tracking-[-0.04em] text-light">Zorlex AI</span>
           </Link>
           
