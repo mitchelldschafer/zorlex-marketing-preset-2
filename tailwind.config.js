@@ -20,6 +20,7 @@ export default {
         heading: ['"Sora"', '"Space Grotesk"', 'sans-serif'],
         body: ['"Inter"', 'sans-serif'],
         mono: ['"IBM Plex Mono"', 'monospace'],
+        serif: ['"Playfair Display"', 'serif'],
       },
       spacing: {
         'xs': "var(--space-xs)",
