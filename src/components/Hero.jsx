@@ -28,7 +28,7 @@ export default function Hero() {
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full h-[105%] object-cover object-top"
       >
         <source src="/Neural_architecture.mp4" type="video/mp4" />
       </video>
