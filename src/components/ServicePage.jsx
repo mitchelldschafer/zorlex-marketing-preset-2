@@ -130,13 +130,6 @@ export default function ServicePage() {
 
   return (
     <div className="min-h-screen bg-dark pt-32 pb-20 px-6 relative overflow-hidden">
-      {/* Dynamic Background SVG Overlay */}
-      {slug === 'website-design-development' && (
-        <div 
-          className="absolute top-[-5%] right-[-5%] w-full max-w-[1000px] h-[800px] pointer-events-none z-0 opacity-20"
-          style={{ backgroundImage: "url('/browser_mockup_animated.svg')", backgroundPosition: 'top right', backgroundRepeat: 'no-repeat', backgroundSize: 'contain' }}
-        />
-      )}
       
       <div className="max-w-[1320px] mx-auto relative z-10">
         <Link to="/" className="flex items-center gap-2 text-accent mb-12 hover:-translate-x-1 transition-transform w-fit font-body">
@@ -144,13 +137,30 @@ export default function ServicePage() {
           Back to Home
         </Link>
         
-        <div className="pill-tag px-4 py-1.5 rounded-full border border-accent/40 bg-accent/10 mb-8 w-fit">
-          <span className="font-mono text-accent text-xs tracking-widest uppercase font-medium">✦ Service Category</span>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center mb-16">
+          {/* Left Side: Category and Title */}
+          <div className="flex flex-col items-start pr-0 lg:pr-8">
+            <div className="pill-tag px-4 py-1.5 rounded-full border border-accent/40 bg-accent/10 mb-8 w-fit">
+              <span className="font-mono text-accent text-xs tracking-widest uppercase font-medium">✦ Service Category</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-semibold text-light tracking-[-0.04em] leading-[1.1]">
+              {title}
+            </h1>
+          </div>
+          
+          {/* Right Side: Interactive Animated SVG */}
+          <div className="w-full flex justify-center lg:justify-end">
+            {slug === 'website-design-development' && (
+              <object 
+                type="image/svg+xml" 
+                data="/browser_mockup_animated.svg" 
+                className="w-full max-w-[600px] h-auto filter drop-shadow-[0_20px_50px_rgba(79,70,229,0.15)]"
+                aria-label="Browser Mockup Animation"
+              />
+            )}
+          </div>
         </div>
-        
-        <h1 className="text-5xl md:text-8xl font-heading font-semibold text-light tracking-[-0.04em] mb-12 leading-[1.1]">
-          {title}
-        </h1>
         
         {slug === 'website-design-development' ? (
           loading ? (
