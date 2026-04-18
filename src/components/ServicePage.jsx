@@ -156,6 +156,13 @@ export default function ServicePage() {
             {slug === 'website-design-development' && (
               <BrowserMockupSVG />
             )}
+            {slug === 'seo' && (
+              <img 
+                src="/signal_amplification.svg" 
+                alt="Search Engine Signal Amplification" 
+                className="w-full max-w-[600px] xl:max-w-[700px] h-auto object-contain opacity-90 drop-shadow-[0_0_40px_rgba(99,102,241,0.15)] hover:opacity-100 hover:drop-shadow-[0_0_60px_rgba(99,102,241,0.25)] transition-all duration-700" 
+              />
+            )}
           </div>
         </div>
         
