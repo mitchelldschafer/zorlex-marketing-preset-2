@@ -5,6 +5,8 @@ import { gsap } from 'gsap';
 import BrowserMockupSVG from './BrowserMockupSVG';
 import SEOCards from './SEOCards';
 import DigitalStrategyCards from './DigitalStrategyCards';
+import signalSvg from '../assets/signal_amplification.svg';
+import assemblingSvg from '../assets/scattered_components_assembling.svg';
 
 // NEW GOOGLE SHEET CSV URL HERE
 // Pointing specifically to the "websites" tab instead of the "projects" tab via gid=2134175586 & single=true
@@ -159,14 +161,14 @@ export default function ServicePage() {
             )}
             {slug === 'seo' && (
               <img 
-                src="/signal_amplification.svg" 
+                src={signalSvg} 
                 alt="Search Engine Signal Amplification" 
                 className="w-full max-w-[600px] xl:max-w-[700px] h-auto object-contain opacity-90 drop-shadow-[0_0_40px_rgba(99,102,241,0.15)] hover:opacity-100 hover:drop-shadow-[0_0_60px_rgba(99,102,241,0.25)] transition-all duration-700" 
               />
             )}
             {slug === 'digital-strategy' && (
               <img 
-                src="/scattered_components_assembling.svg" 
+                src={assemblingSvg} 
                 alt="Digital Strategy Assembling" 
                 className="w-full max-w-[600px] xl:max-w-[700px] h-auto object-contain opacity-90 drop-shadow-[0_0_40px_rgba(99,102,241,0.15)] hover:opacity-100 hover:drop-shadow-[0_0_60px_rgba(99,102,241,0.25)] transition-all duration-700" 
               />
