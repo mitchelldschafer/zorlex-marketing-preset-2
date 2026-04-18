@@ -11,6 +11,9 @@ import BrandingSwatchesSVG from './BrandingSwatchesSVG';
 import MaintenancePulseSVG from './MaintenancePulseSVG';
 import BrandingCards from './BrandingCards';
 import MaintenanceCards from './MaintenanceCards';
+import FinancialAutomationCards from './FinancialAutomationCards';
+import OperationalAutomationCards from './OperationalAutomationCards';
+import CustomAppCards from './CustomAppCards';
 
 // NEW GOOGLE SHEET CSV URL HERE
 // Pointing specifically to the "websites" tab instead of the "projects" tab via gid=2134175586 & single=true
@@ -30,7 +33,10 @@ export default function ServicePage() {
     'seo': 'Search Engine Optimization',
     'digital-strategy': 'Digital Strategy',
     'branding': 'Branding & Identity',
-    'maintenance': 'Systems Maintenance'
+    'maintenance': 'Systems Maintenance',
+    'financial-automation': 'Financial & Bookkeeping Automation',
+    'operational-automation': 'Operational Automation',
+    'custom-applications': 'Custom Applications'
   };
 
   const title = titles[slug] || 'Service Offering';
@@ -175,6 +181,24 @@ export default function ServicePage() {
             {slug === 'maintenance' && (
               <MaintenancePulseSVG />
             )}
+            {(slug === 'financial-automation' || slug === 'operational-automation' || slug === 'custom-applications') && (
+              <div className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] relative flex items-center justify-center">
+                <div className="absolute inset-0 bg-accent/5 rounded-full blur-3xl animate-pulse"></div>
+                <div className="relative w-64 h-64 border-2 border-accent/20 rounded-3xl flex items-center justify-center transform rotate-12 transition-transform hover:rotate-0 duration-700">
+                  <div className="w-full h-full p-8 opacity-40">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-accent">
+                      <rect x="2" y="2" width="20" height="20" rx="4" />
+                      <path d="M7 12h10M12 7v10" />
+                    </svg>
+                  </div>
+                  <div className="absolute -top-4 -right-4 w-12 h-12 bg-accent rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(123,107,255,0.5)]">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-dark w-6 h-6">
+                      <path d="M12 2v4m0 12v4M2 12h4m12 0h4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
         
@@ -244,6 +268,12 @@ export default function ServicePage() {
           <BrandingCards />
         ) : slug === 'maintenance' ? (
           <MaintenanceCards />
+        ) : slug === 'financial-automation' ? (
+          <FinancialAutomationCards />
+        ) : slug === 'operational-automation' ? (
+          <OperationalAutomationCards />
+        ) : slug === 'custom-applications' ? (
+          <CustomAppCards />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div className="flex flex-col gap-8">
