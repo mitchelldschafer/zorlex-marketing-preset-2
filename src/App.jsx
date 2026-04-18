@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import ScrollToTop from './components/ScrollToTop'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import ServicePage from './components/ServicePage'
@@ -11,6 +12,7 @@ import Footer from './components/Footer'
 function App() {
   return (
     <main className="w-full min-h-screen bg-dark overflow-x-hidden">
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
