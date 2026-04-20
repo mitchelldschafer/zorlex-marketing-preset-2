@@ -17,6 +17,11 @@ const client = createClient({
 });
 
 async function generateRss() {
+  if (!projectId || projectId === 'your-project-id') {
+    console.warn('⚠️  RSS generation skipped: VITE_SANITY_PROJECT_ID is missing or not set in build environment.');
+    return;
+  }
+
   const query = `*[_type == "post"] | order(publishedAt desc)[0...25] {
     title,
     "slug": slug.current,
@@ -25,10 +30,14 @@ async function generateRss() {
     "url": "${canonicalUrl}/blog/" + slug.current
   }`;
 
+  console.log(`📡 Fetching blog data for RSS from Sanity (${projectId})...`);
+
   try {
     const posts = await client.fetch(query);
     
-    const items = posts.map(post => `
+    if (!posts || posts.length === 0) {
+      console.warn('⚠️  No posts found in Sanity. RSS will be empty.');
+    }
     <item>
       <title><![CDATA[${post.title}]]></title>
       <link>${post.url}</link>
