@@ -15,7 +15,10 @@
     "lucide-react": "^0.577.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-router-dom": "^7.1.5"
+    "react-router-dom": "^7.1.5",
+    "@sanity/client": "^6.10.0",
+    "@portabletext/react": "^3.0.18",
+    "@sanity/image-url": "^1.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
