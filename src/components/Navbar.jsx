@@ -93,6 +93,7 @@ export default function Navbar() {
               </div>
             </div>
 
+            <Link to="/blog" className="hover:text-accent transition-colors hover:-translate-y-[1px] transform">Blog</Link>
             <Link to="/about" className="hover:text-accent transition-colors hover:-translate-y-[1px] transform">About</Link>
           </div>
           

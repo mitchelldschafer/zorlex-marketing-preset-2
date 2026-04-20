@@ -8,6 +8,8 @@ import About from './components/About'
 import ProcessPage from './components/ProcessPage'
 import ContactPage from './components/ContactPage'
 import Footer from './components/Footer'
+import BlogList from './components/BlogList'
+import BlogPost from './components/BlogPost'
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/process" element={<ProcessPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/blog" element={<BlogList />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
       <Footer />
     </main>
