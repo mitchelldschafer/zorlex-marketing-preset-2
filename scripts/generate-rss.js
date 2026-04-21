@@ -4,7 +4,7 @@ import { createClient } from '@sanity/client';
 
 const projectId = process.env.VITE_SANITY_PROJECT_ID;
 const dataset = process.env.VITE_SANITY_DATASET || 'production';
-const apiToken = process.env.VITE_SANITY_API_TOKEN; 
+const apiToken = process.env.SANITY_API_TOKEN; 
 const canonicalUrl = 'https://zorlex.agency';
 
 const client = createClient({

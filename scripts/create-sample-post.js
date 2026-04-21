@@ -8,7 +8,7 @@ const client = createClient({
   projectId: process.env.VITE_SANITY_PROJECT_ID,
   dataset: process.env.VITE_SANITY_DATASET || 'production',
   apiVersion: '2023-05-03',
-  token: process.env.VITE_SANITY_API_TOKEN,
+  token: process.env.SANITY_API_TOKEN,
   useCdn: false,
 });
 
@@ -80,8 +80,8 @@ const samplePost = {
 async function createPost() {
   console.log('🚀 Attempting to transmit sample post to Sanity...');
   
-  if (!process.env.VITE_SANITY_API_TOKEN) {
-    console.error('❌ Error: VITE_SANITY_API_TOKEN is missing in .env');
+  if (!process.env.SANITY_API_TOKEN) {
+    console.error('❌ Error: SANITY_API_TOKEN is missing in .env');
     return;
   }
 
