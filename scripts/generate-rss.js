@@ -3,7 +3,7 @@ import path from 'path';
 import { createClient } from '@sanity/client';
 
 // NOTE: Ensure these matches your .env or replace with hardcoded values for the script
-const projectId = process.env.VITE_SANITY_PROJECT_ID || 'your-project-id';
+const projectId = process.env.VITE_SANITY_PROJECT_ID || 'xvq24507';
 const dataset = 'production';
 const apiToken = process.env.Sanity_API_Token; 
 const canonicalUrl = 'https://zorlex.agency'; // Replace with your live domain
