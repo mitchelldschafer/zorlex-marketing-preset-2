@@ -2,11 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import { createClient } from '@sanity/client';
 
-// NOTE: Ensure these matches your .env or replace with hardcoded values for the script
 const projectId = process.env.VITE_SANITY_PROJECT_ID || 'xvq24507';
-const dataset = 'production';
-const apiToken = process.env.Sanity_API_Token; 
-const canonicalUrl = 'https://zorlex.agency'; // Replace with your live domain
+const dataset = process.env.VITE_SANITY_DATASET || 'production';
+const apiToken = process.env.VITE_SANITY_API_TOKEN; 
+const canonicalUrl = 'https://zorlex.agency';
 
 const client = createClient({
   projectId,
@@ -17,8 +16,10 @@ const client = createClient({
 });
 
 async function generateRss() {
+  console.log(`📡 Starting RSS generation for Project: ${projectId}`);
+  
   if (!projectId || projectId === 'your-project-id') {
-    console.warn('⚠️  RSS generation skipped: VITE_SANITY_PROJECT_ID is missing or not set in build environment.');
+    console.warn('⚠️ RSS generation skipped: Project ID is missing.');
     return;
   }
 
@@ -30,21 +31,20 @@ async function generateRss() {
     "url": "${canonicalUrl}/blog/" + slug.current
   }`;
 
-  console.log(`📡 Fetching blog data for RSS from Sanity (${projectId})...`);
-
   try {
     const posts = await client.fetch(query);
-    
-    if (!posts || posts.length === 0) {
-      console.warn('⚠️  No posts found in Sanity. RSS will be empty.');
-    }
+    console.log(`✅ Fetched ${posts?.length || 0} posts from Sanity.`);
+
+    const items = (posts || []).map(post => {
+      return `
     <item>
-      <title><![CDATA[${post.title}]]></title>
-      <link>${post.url}</link>
-      <guid isPermaLink="true">${post.url}</guid>
-      <pubDate>${new Date(post.publishedAt).toUTCString()}</pubDate>
-      <description><![CDATA[${post.excerpt}]]></description>
-    </item>`).join('');
+      <title><![CDATA[${post.title || ''}]]></title>
+      <link>${post.url || ''}</link>
+      <guid isPermaLink="true">${post.url || ''}</guid>
+      <pubDate>${post.publishedAt ? new Date(post.publishedAt).toUTCString() : new Date().toUTCString()}</pubDate>
+      <description><![CDATA[${post.excerpt || ''}]]></description>
+    </item>`;
+    }).join('');
 
     const rss = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -59,13 +59,21 @@ async function generateRss() {
 </channel>
 </rss>`;
 
-    const outputPath = path.join(process.cwd(), 'public', 'rss.xml');
+    const publicDir = path.join(process.cwd(), 'public');
+    if (!fs.existsSync(publicDir)) {
+      fs.mkdirSync(publicDir, { recursive: true });
+    }
+    
+    const outputPath = path.join(publicDir, 'rss.xml');
     fs.writeFileSync(outputPath, rss);
-    console.log('✅ RSS Feed successfully generated at public/rss.xml');
+    console.log('✅ RSS Feed successfully generated!');
     
   } catch (error) {
-    console.error('❌ Error generating RSS feed:', error);
+    console.error('❌ Error during RSS generation:', error.message);
+    // We don't process.exit(1) here to allow the main build to succeed even if RSS fails
   }
 }
 
-generateRss();
+generateRss().catch(err => {
+  console.error('💥 Fatal error in RSS script:', err);
+});
