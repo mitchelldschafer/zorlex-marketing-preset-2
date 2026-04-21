@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { createClient } from '@sanity/client';
 
-const projectId = process.env.VITE_SANITY_PROJECT_ID || 'xvq24507';
+const projectId = process.env.VITE_SANITY_PROJECT_ID;
 const dataset = process.env.VITE_SANITY_DATASET || 'production';
 const apiToken = process.env.VITE_SANITY_API_TOKEN; 
 const canonicalUrl = 'https://zorlex.agency';

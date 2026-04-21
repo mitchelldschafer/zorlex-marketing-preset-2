@@ -7,8 +7,8 @@ export default defineConfig({
   name: "default",
   title: "Zorlex Studio",
 
-  projectId: "xvq24507",
-  dataset: "production",
+  projectId: process.env.VITE_SANITY_PROJECT_ID, 
+  dataset: process.env.VITE_SANITY_DATASET || "production",
 
   plugins: [deskTool(), visionTool()],
 
