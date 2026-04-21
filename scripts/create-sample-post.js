@@ -5,8 +5,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const client = createClient({
-  projectId: process.env.SANITY_PROJECT_ID,
-  dataset: process.env.SANITY_DATASET || 'production',
+  projectId: 'xvq24507',
+  dataset: 'production',
   apiVersion: '2023-05-03',
   token: process.env.SANITY_API_TOKEN,
   useCdn: false,
