@@ -27,47 +27,65 @@ const createBlock = (text, style = 'normal') => {
 };
 
 const postBody = [
-  createBlock("The AI revolution is often framed through the lens of extreme technical capability. We hear about AI writing thousands of lines of code, orchestrating complex cloud deployments, and solving mathematical proofs. Tools like Claude Code have undeniably supercharged the engineering world, acting as highly capable pairs of hands for developers. However, the true productivity multiplier for the global economy does not lie in tools built exclusively for engineers.", "normal"),
-  createBlock("It lies in making elite AI accessible to everyone. Enter Claude Coworker.", "normal"),
-  createBlock("The Problem with Developer-Centric AI", "h2"),
-  createBlock("For the past few years, the most powerful AI capabilities have been locked behind terminal interfaces, API endpoints, and technical documentation. If you were a software engineer, you could leverage tools like GitHub Copilot or Claude Code to double your output. But if you were a marketing manager, an HR director, or a sales executive, your access to AI was largely limited to chatting with a basic web interface.", "normal"),
-  createBlock("This created a \"productivity inequality.\" Engineers were moving at light speed, while the rest of the organization was still doing things the slow, manual way. The barrier to entry for advanced AI workflows—such as connecting an AI to an internal database or having it execute multi-step workflows—was simply too high for non-technical staff.", "normal"),
-  createBlock("Claude Coworker: Democratizing the AI Agent", "h2"),
-  createBlock("Claude Coworker bridges this gap by bringing agentic AI capabilities out of the terminal and into the mainstream workplace environment. It is designed to be an accessible, conversational entity that integrates seamlessly into the tools non-engineers already use: Slack, email, internal knowledge bases, and document drives.", "normal"),
-  createBlock("Instead of requiring a user to write a Python script to fetch data, a project manager can simply ask Claude Coworker, 'Can you pull the latest customer feedback reports from last week, summarize the top three complaints, and draft a response email to the team?' Claude Coworker understands the context, navigates the integrated systems, performs the synthesis, and delivers the result in plain English.", "normal"),
-  createBlock("The True Productivity Multiplier", "h2"),
-  createBlock("Why is this more impactful than coding assistants? Simply because of scale. While engineers make up a crucial part of tech companies, the vast majority of the global workforce consists of operators, managers, marketers, and administrators.", "normal"),
-  createBlock("When you give an engineer a tool that makes them 50% faster, you get more code. When you give an entire organization a tool that makes every single employee 50% faster, you fundamentally change the trajectory of the business.", "normal"),
-  createBlock("Claude Coworker acts as a universal accelerator. It handles the 'glue work'—the endless synthesis of meeting notes, the drafting of standard operating procedures, the routing of information between departments, and the parsing of dense reports. By automating this cognitive overhead, employees are freed to focus on high-leverage strategic thinking.", "normal"),
+  createBlock("The AI revolution has frequently been framed through the lens of specialized tools. We hear about AI writing thousands of lines of code, orchestrating complex cloud deployments, and solving mathematical proofs. Tools like Claude Code have undeniably supercharged the engineering world, acting as highly capable pairs of hands for developers. However, the true productivity multiplier for the global economy lies in making agentic, file-system-level AI accessible to everyone.", "normal"),
+  createBlock("Enter Claude Cowork.", "normal"),
+  createBlock("Beyond the Chatbot: True Agentic Collaboration", "h2"),
+  createBlock("For the past few years, the majority of AI interactions have been confined to web browsers and isolated chat windows. While powerful for brainstorming or generating text, this paradigm required constant copying, pasting, and manual context-switching. You were not collaborating with an AI; you were just querying a database.", "normal"),
+  createBlock("Claude Cowork fundamentally breaks this barrier. It transforms Claude from a chatbot into an autonomous agent that operates directly on your local machine. Operating in a secure, containerized environment, Claude Cowork is granted access to designated local folders on your file system, allowing it to autonomously read, write, edit, and organize files.", "normal"),
+  createBlock("How People Are Using Claude Cowork Today", "h2"),
+  createBlock("The shift from a chat interface to an autonomous desktop collaborator has unlocked entirely new workflows across industries:", "normal"),
+  createBlock("1. Autonomous File Management & Synthesis", "h3"),
+  createBlock("Instead of manually uploading five different PDFs to summarize a project, a project manager can simply point Claude Cowork to a directory and say, 'Review all the discovery notes in this folder, extract the key deliverables, and draft a formal Statement of Work in a new Word document.' Claude Cowork will autonomously read the files, synthesize the data, and create the deliverable in the file system without any further human intervention.", "normal"),
+  createBlock("2. Complex Multi-Step Workflows", "h3"),
+  createBlock("For marketers and content creators, Claude Cowork acts as a tireless editorial assistant. Users are instructing the agent to batch-process files. For example, 'Take these 10 raw interview transcripts, clean up the grammar, extract three pull quotes from each, and save them as individual markdown files in the /processed folder.' Tasks that previously took hours of tedious labor are now executed autonomously in the background.", "normal"),
+  createBlock("3. Code and Context Collaboration for Non-Engineers", "h3"),
+  createBlock("While Claude Code is built for software engineers, Claude Cowork brings repository-level understanding to everyone else. Technical writers, QA testers, and product managers are using Cowork to navigate complex codebases, document architectures, and sync documentation alongside the engineering team's output, bridging the gap between technical and non-technical staff.", "normal"),
   createBlock("A Partner, Not Just a Tool", "h2"),
-  createBlock("What makes Claude Coworker unique is its positioning as a collaborative entity rather than a rigid software tool. It possesses the nuance and contextual awareness to hold long-running conversations, remember project constraints, and adapt to the specific communication style of its human counterparts.", "normal"),
-  createBlock("You don't 'use' Claude Coworker; you collaborate with it. You delegate tasks to it just as you would to a junior analyst or a chief of staff. This paradigm shift—from using software to collaborating with intelligence—is what makes accessible AI so revolutionary.", "normal"),
-  createBlock("The Accessible Future", "h2"),
-  createBlock("The future of work is not one where everyone learns to code so they can talk to machines. The future is one where machines learn to communicate like us, integrating effortlessly into our existing workflows.", "normal"),
-  createBlock("While developer-focused tools will continue to push the boundaries of technical achievement, tools like Claude Coworker represent the true democratization of AI. By giving every employee an elite, tireless, and infinitely knowledgeable colleague, organizations can unlock unprecedented levels of creativity and operational efficiency. The AI revolution isn't just for coders anymore; it's for all of us.", "normal")
+  createBlock("What makes Claude Cowork unique is its positioning as a collaborative entity. You delegate tasks to it just as you would to a junior analyst. Because it has direct file system access, it works *alongside* you in your local environment. You can go grab a coffee while Claude Cowork iterates through a directory of spreadsheets, restructures the data, and saves the finalized reports.", "normal"),
+  createBlock("The Accessible Future of Work", "h2"),
+  createBlock("The future of work is not one where everyone learns to code so they can talk to machines. The future is one where machines integrate effortlessly into our existing local environments, manipulating files and executing workflows just as a human colleague would.", "normal"),
+  createBlock("By giving every employee an elite, tireless, and infinitely capable local agent, organizations can unlock unprecedented levels of operational efficiency. The AI revolution isn't just happening in the cloud anymore; it's happening right on your desktop.", "normal")
 ];
 
 const newPost = {
   _type: 'post',
-  title: 'Meet Your New Colleague: Why Claude Coworker is the Accessible AI Multiplier',
+  title: 'Meet Your New Colleague: How Claude Cowork is Revolutionizing Autonomous AI',
   slug: {
     _type: 'slug',
-    current: 'claude-coworker-accessible-ai-multiplier',
+    current: 'claude-cowork-accessible-ai-multiplier',
   },
   publishedAt: new Date().toISOString(),
-  excerpt: 'While developer-focused tools like Claude Code have pushed boundaries, Anthropic\'s Claude Coworker brings elite AI assistance to everyone. Learn how accessible AI is changing the workplace for non-engineers.',
+  excerpt: 'Moving beyond the chatbot, Anthropic\'s Claude Cowork brings autonomous, file-system-level AI agents directly to your desktop. Discover how people are using it to automate complex workflows.',
   body: postBody,
 };
 
 async function publishPost() {
-  console.log('🚀 Publishing Claude Coworker Post...');
+  console.log('🚀 Publishing Claude Cowork Post...');
   if (!process.env.SANITY_API_TOKEN) {
     console.error('❌ Error: SANITY_API_TOKEN is missing in .env');
     return;
   }
   try {
-    const result = await client.create(newPost);
-    console.log(`✅ Success! Post published.`);
+    // Check if a post with this slug already exists to prevent duplicates
+    const existing = await client.fetch(`*[_type == "post" && slug.current == "claude-cowork-accessible-ai-multiplier"][0]`);
+    
+    if (existing) {
+      console.log(`Found existing post with ID: ${existing._id}. Updating...`);
+      newPost._id = existing._id;
+      const result = await client.createOrReplace(newPost);
+      console.log(`✅ Success! Post updated.`);
+    } else {
+      const result = await client.create(newPost);
+      console.log(`✅ Success! Post published.`);
+    }
+    
+    // Also try to delete the old "claude-coworker" post if it exists
+    const oldPost = await client.fetch(`*[_type == "post" && slug.current == "claude-coworker-accessible-ai-multiplier"][0]`);
+    if (oldPost) {
+      await client.delete(oldPost._id);
+      console.log(`🗑️ Deleted old 'claude-coworker' post.`);
+    }
+    
     console.log(`🔗 Live at /blog/${newPost.slug.current}`);
   } catch (error) {
     console.error('❌ Failed to publish post:', error.message);
