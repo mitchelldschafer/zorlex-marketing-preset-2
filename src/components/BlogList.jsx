@@ -2,7 +2,10 @@ import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { client, queries, urlFor } from "../lib/sanity";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, Calendar } from "lucide-react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function BlogList() {
   const [posts, setPosts] = useState([]);
@@ -26,6 +29,10 @@ export default function BlogList() {
     if (!loading && posts.length > 0) {
       let ctx = gsap.context(() => {
         gsap.from(".blog-card", {
+          scrollTrigger: {
+            trigger: ".blog-grid",
+            start: "top 85%",
+          },
           y: 40,
           opacity: 0,
           stagger: 0.1,
@@ -55,7 +62,7 @@ export default function BlogList() {
         {loading ? (
           <div className="flex animate-pulse gap-4 text-accent font-mono py-12">Fetching ideas from the edge...</div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {posts.map((post, i) => (
               <Link 
                 key={i} 
