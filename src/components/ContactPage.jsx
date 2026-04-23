@@ -1,9 +1,34 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { Mail, MessageSquare, Send, ArrowRight } from 'lucide-react';
 
 export default function ContactPage() {
   const container = useRef(null);
+  const [status, setStatus] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    setStatus('SUBMITTING');
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      if (response.ok) {
+        setStatus('SUCCESS');
+        form.reset();
+      } else {
+        setStatus('ERROR');
+      }
+    } catch (error) {
+      setStatus('ERROR');
+    }
+  };
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -31,20 +56,20 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20">
           
           {/* Contact Form Tier */}
-          <div className="flex flex-col gap-8">
+          <form action="https://formspree.io/f/mldnpokp" method="POST" onSubmit={handleSubmit} className="flex flex-col gap-8">
             <div className="contact-form-item flex flex-col gap-2">
               <label className="text-sm font-mono text-muted uppercase tracking-widest pl-2">Full Name</label>
-              <input type="text" placeholder="John Doe" className="bg-dark-surface border border-white/5 rounded-2xl p-6 text-white font-body focus:outline-none focus:border-accent/50 transition-colors" />
+              <input type="text" name="name" required placeholder="John Doe" className="bg-dark-surface border border-white/5 rounded-2xl p-6 text-white font-body focus:outline-none focus:border-accent/50 transition-colors" />
             </div>
 
             <div className="contact-form-item flex flex-col gap-2">
               <label className="text-sm font-mono text-muted uppercase tracking-widest pl-2">Email Address</label>
-              <input type="email" placeholder="john@company.com" className="bg-dark-surface border border-white/5 rounded-2xl p-6 text-white font-body focus:outline-none focus:border-accent/50 transition-colors" />
+              <input type="email" name="email" required placeholder="john@company.com" className="bg-dark-surface border border-white/5 rounded-2xl p-6 text-white font-body focus:outline-none focus:border-accent/50 transition-colors" />
             </div>
 
             <div className="contact-form-item flex flex-col gap-2">
               <label className="text-sm font-mono text-muted uppercase tracking-widest pl-2">Services Needed</label>
-              <select className="bg-dark-surface border border-white/5 rounded-2xl p-6 text-white font-body focus:outline-none focus:border-accent/50 transition-colors appearance-none cursor-pointer">
+              <select name="service" className="bg-dark-surface border border-white/5 rounded-2xl p-6 text-white font-body focus:outline-none focus:border-accent/50 transition-colors appearance-none cursor-pointer">
                 <option>Website Design & Development</option>
                 <option>Search Engine Optimization</option>
                 <option>Digital Strategy</option>
@@ -55,15 +80,29 @@ export default function ContactPage() {
 
             <div className="contact-form-item flex flex-col gap-2">
               <label className="text-sm font-mono text-muted uppercase tracking-widest pl-2">Project Details</label>
-              <textarea rows="5" placeholder="Tell us about your objectives..." className="bg-dark-surface border border-white/5 rounded-2xl p-6 text-white font-body focus:outline-none focus:border-accent/50 transition-colors resize-none"></textarea>
+              <textarea name="message" required rows="5" placeholder="Tell us about your objectives..." className="bg-dark-surface border border-white/5 rounded-2xl p-6 text-white font-body focus:outline-none focus:border-accent/50 transition-colors resize-none"></textarea>
             </div>
 
-            <button className="contact-form-item relative overflow-hidden bg-accent text-dark font-body font-semibold text-lg px-12 py-5 rounded-full group hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-3">
-              <span className="relative z-10 group-hover:text-white transition-colors duration-300">Submit Project Brief</span>
-              <Send size={20} className="relative z-10 group-hover:text-white transition-colors duration-300" />
-              <div className="absolute inset-0 bg-dark transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></div>
-            </button>
-          </div>
+            <div className="flex flex-col">
+              <button 
+                type="submit" 
+                disabled={status === 'SUBMITTING' || status === 'SUCCESS'}
+                className="contact-form-item relative overflow-hidden bg-accent text-dark font-body font-semibold text-lg px-12 py-5 rounded-full group hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
+              >
+                <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+                  {status === 'SUBMITTING' ? 'Sending...' : status === 'SUCCESS' ? 'Brief Submitted!' : 'Submit Project Brief'}
+                </span>
+                {status !== 'SUCCESS' && <Send size={20} className="relative z-10 group-hover:text-white transition-colors duration-300" />}
+                <div className="absolute inset-0 bg-dark transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></div>
+              </button>
+              {status === 'ERROR' && (
+                <p className="text-red-500 font-body text-sm mt-4 text-center">Oops! There was a problem submitting your form. Please try again.</p>
+              )}
+              {status === 'SUCCESS' && (
+                <p className="text-green-500 font-body text-sm mt-4 text-center">Thanks! We've received your project brief and will be in touch shortly.</p>
+              )}
+            </div>
+          </form>
 
           {/* Contact Details Tier */}
           <div className="flex flex-col gap-12">
