@@ -7,6 +7,8 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [marketingDropdownOpen, setMarketingDropdownOpen] = useState(false);
   const [automationDropdownOpen, setAutomationDropdownOpen] = useState(false);
+  const [mobileMarketingOpen, setMobileMarketingOpen] = useState(false);
+  const [mobileAutomationOpen, setMobileAutomationOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -125,38 +127,53 @@ export default function Navbar() {
             <X size={32} />
           </button>
         </div>
-        <div className="flex flex-col items-center justify-center min-h-full py-20 gap-8 font-heading text-xl font-semibold overflow-y-auto">
+        <div className="flex flex-col items-center justify-start pt-24 pb-20 min-h-full gap-8 font-heading text-xl font-semibold overflow-y-auto w-full">
           <Link to="/#work" onClick={() => setMobileMenuOpen(false)} className="hover:text-accent text-3xl">Work</Link>
           <Link to="/pricing" onClick={() => setMobileMenuOpen(false)} className="hover:text-accent text-3xl">Pricing</Link>
           
-          <div className="flex flex-col items-center gap-4">
-            <span className="text-muted text-xs font-mono uppercase tracking-widest">Marketing</span>
-            {marketingLinks.map((link) => (
-              <Link 
-                key={link.slug}
-                to={`/services/${link.slug}`}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-xl hover:text-accent"
-              >
-                {link.title}
-              </Link>
-            ))}
+          <div className="flex flex-col items-center w-full px-6">
+            <button 
+              onClick={() => setMobileMarketingOpen(!mobileMarketingOpen)}
+              className="flex items-center gap-2 text-3xl hover:text-accent transition-colors"
+            >
+              Marketing <ChevronDown size={24} className={`transition-transform duration-300 ${mobileMarketingOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <div className={`flex flex-col items-center overflow-hidden transition-all duration-300 ${mobileMarketingOpen ? 'max-h-[500px] mt-6 opacity-100' : 'max-h-0 opacity-0'}`}>
+              {marketingLinks.map((link) => (
+                <Link 
+                  key={link.slug}
+                  to={`/services/${link.slug}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-lg text-white/70 hover:text-accent py-3 text-center"
+                >
+                  {link.title}
+                </Link>
+              ))}
+            </div>
           </div>
 
-          <div className="flex flex-col items-center gap-4">
-            <span className="text-muted text-xs font-mono uppercase tracking-widest">Automation</span>
-            {automationLinks.map((link) => (
-              <Link 
-                key={link.slug}
-                to={`/services/${link.slug}`}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-xl hover:text-accent"
-              >
-                {link.title}
-              </Link>
-            ))}
+          <div className="flex flex-col items-center w-full px-6">
+            <button 
+              onClick={() => setMobileAutomationOpen(!mobileAutomationOpen)}
+              className="flex items-center gap-2 text-3xl hover:text-accent transition-colors"
+            >
+              Automation <ChevronDown size={24} className={`transition-transform duration-300 ${mobileAutomationOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <div className={`flex flex-col items-center overflow-hidden transition-all duration-300 ${mobileAutomationOpen ? 'max-h-[500px] mt-6 opacity-100' : 'max-h-0 opacity-0'}`}>
+              {automationLinks.map((link) => (
+                <Link 
+                  key={link.slug}
+                  to={`/services/${link.slug}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-lg text-white/70 hover:text-accent py-3 text-center"
+                >
+                  {link.title}
+                </Link>
+              ))}
+            </div>
           </div>
 
+          <Link to="/blog" onClick={() => setMobileMenuOpen(false)} className="hover:text-accent text-3xl">Blog</Link>
           <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="hover:text-accent text-3xl">About</Link>
           <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="mt-4 bg-accent text-dark px-12 py-4 rounded-full text-lg block text-center">
             Start a Project
