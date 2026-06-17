@@ -71,9 +71,9 @@ export default function Services() {
         <div className="services-head flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-24 gap-4 md:gap-6">
           <div>
             <div className="font-mono text-sm text-muted uppercase tracking-widest mb-4 md:mb-6">Our Capabilities</div>
-            <h2 className="text-3xl sm:text-4xl md:text-7xl font-heading font-semibold text-dark tracking-[-0.04em]">The Offering</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-7xl font-heading font-semibold text-black tracking-[-0.04em]">The Offering</h2>
           </div>
-          <p className="font-body text-base md:text-xl text-dark/70 max-w-[400px]">
+          <p className="font-body text-base md:text-xl text-black/75 max-w-[400px]">
             Comprehensive digital engineering to elevate your brand's presence and accelerate growth.
           </p>
         </div>
@@ -89,8 +89,8 @@ export default function Services() {
               <div className="flex flex-col h-full justify-between relative z-10">
                 <div className="font-mono text-accent text-xl font-semibold mb-8 md:mb-12">{svc.num}</div>
                 <div>
-                  <h3 className="font-heading text-2xl md:text-3xl font-semibold text-dark mb-3 md:mb-4">{svc.title}</h3>
-                  <p className="font-body text-dark/70 text-base md:text-[18px] leading-relaxed max-w-[480px]">{svc.desc}</p>
+                  <h3 className="font-heading text-2xl md:text-3xl font-semibold text-black mb-3 md:mb-4">{svc.title}</h3>
+                  <p className="font-body text-black/75 text-base md:text-[18px] leading-relaxed max-w-[480px]">{svc.desc}</p>
                 </div>
               </div>
 

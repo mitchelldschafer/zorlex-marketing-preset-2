@@ -112,8 +112,8 @@ export default function ContactPage() {
               </div>
               <h3 className="text-2xl font-heading font-semibold text-white">General Inquiries</h3>
               <p className="text-white/60 font-body leading-relaxed">For general questions or partnership opportunities, reach out via our direct channel.</p>
-              <a href="mailto:hello@zorlex.com" className="text-base sm:text-xl text-accent font-medium hover:text-white transition-colors flex items-center gap-2 group">
-                hello@zorlex.com
+              <a href="mailto:mitchell.schafer@zorlexai.com" className="text-base sm:text-xl text-accent font-medium hover:text-white transition-colors flex items-center gap-2 group">
+                mitchell.schafer@zorlexai.com
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-2" />
               </a>
             </div>

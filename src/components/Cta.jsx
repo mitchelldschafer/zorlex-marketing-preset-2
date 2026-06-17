@@ -24,7 +24,7 @@ export default function Cta() {
   }, []);
 
   return (
-    <section ref={comp} id="contact" className="w-full py-20 md:py-48 bg-dark px-4 sm:px-6 flex items-center justify-center text-center relative">
+    <section ref={comp} id="contact" className="w-full py-20 md:py-48 bg-dark px-4 sm:px-6 flex items-center justify-center text-center relative z-10">
       <div className="max-w-[700px] w-full flex flex-col items-center">
 
         <div className="cta-elem font-mono text-sm text-accent uppercase tracking-widest mb-5 md:mb-6">Ready to start?</div>
@@ -38,8 +38,8 @@ export default function Cta() {
           <div className="absolute inset-0 bg-dark transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></div>
         </Link>
         
-        <a href="mailto:hello@zorlex.com" className="cta-elem font-mono text-muted hover:text-light transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-muted hover:after:bg-light inline-block pb-1">
-          hello@zorlex.com
+        <a href="mailto:mitchell.schafer@zorlexai.com" className="cta-elem font-mono text-muted hover:text-light transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-muted hover:after:bg-light inline-block pb-1">
+          mitchell.schafer@zorlexai.com
         </a>
 
       </div>

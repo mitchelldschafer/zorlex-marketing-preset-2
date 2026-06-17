@@ -42,7 +42,7 @@ export default function Footer() {
 
           <div className="col-span-1 md:col-span-1 flex flex-col gap-4">
             <h4 className="font-mono text-light/50 text-xs uppercase tracking-widest mb-2">Contact</h4>
-            <a href="mailto:hello@zorlex.com" className="font-body text-light/80 hover:text-accent transition-all duration-300 hover:-translate-y-1 w-max block">hello@zorlex.com</a>
+            <a href="mailto:mitchell.schafer@zorlexai.com" className="font-body text-light/80 hover:text-accent transition-all duration-300 hover:-translate-y-1 w-max block">mitchell.schafer@zorlexai.com</a>
             <Link to="/contact" className="font-body text-light/80 hover:text-accent transition-all duration-300 hover:-translate-y-1 w-max block">Contact Form</Link>
           </div>
           

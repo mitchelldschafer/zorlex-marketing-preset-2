@@ -51,7 +51,7 @@ export default function FAQ() {
   }, []);
 
   return (
-    <section id="faq" ref={comp} className="w-full py-16 md:py-40 bg-light px-4 sm:px-6">
+    <section id="faq" ref={comp} className="w-full py-24 md:py-56 bg-light px-4 sm:px-6 relative z-10">
       <div className="max-w-[800px] mx-auto flex flex-col">
 
         <h2 className="faq-head text-3xl sm:text-4xl md:text-[64px] font-heading font-semibold text-dark tracking-[-0.04em] text-center mb-10 md:mb-24">

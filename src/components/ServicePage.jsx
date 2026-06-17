@@ -273,7 +273,29 @@ export default function ServicePage() {
         ) : slug === 'operational-automation' ? (
           <OperationalAutomationCards />
         ) : slug === 'custom-applications' ? (
-          <CustomAppCards />
+          <div>
+            <CustomAppCards />
+            
+            {/* Live Showcase / Case Study */}
+            <div className="mt-20 bg-dark-surface p-8 md:p-12 rounded-[32px] border border-border/10 flex flex-col md:flex-row justify-between items-center gap-6">
+              <div>
+                <span className="font-mono text-accent text-xs uppercase tracking-widest block mb-3">✦ Live Platform Showcase</span>
+                <h3 className="font-heading text-2xl md:text-4xl font-semibold text-white mb-4">Zorlex ERP Portal</h3>
+                <p className="font-body text-white/70 text-base md:text-lg max-w-[600px] leading-relaxed">
+                  Explore a live deployment of our custom enterprise resource planning platform, featuring real-time data sync, secure database structures, and a premium management interface.
+                </p>
+              </div>
+              <a 
+                href="https://zorlex-erp.netlify.app/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-accent text-dark font-body font-medium px-8 py-4 rounded-full hover:scale-[1.02] transition-all flex items-center gap-2 group whitespace-nowrap"
+              >
+                Launch Live ERP
+                <ArrowLeft size={16} className="rotate-180 transform group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div className="flex flex-col gap-8">

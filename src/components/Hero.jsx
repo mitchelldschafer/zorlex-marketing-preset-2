@@ -12,8 +12,7 @@ export default function Hero() {
       tl.from(".pill-tag", { opacity: 0, y: 20, duration: 0.8, ease: "power3.out", delay: 0.1 })
         .from(".headline-line-1", { opacity: 0, y: 50, duration: 0.8, ease: "power3.out" }, "-=0.6")
         .from(".headline-line-2", { opacity: 0, y: 50, duration: 0.8, ease: "power3.out" }, "-=0.65")
-        .from(".subtext", { opacity: 0, y: 20, duration: 0.8, ease: "power3.out" }, "-=0.5")
-        .from(".hero-btn", { opacity: 0, y: 20, duration: 0.8, stagger: 0.1, ease: "power3.out" }, "-=0.6");
+        .from(".hero-btn", { opacity: 0, y: 20, duration: 0.8, stagger: 0.1, ease: "power3.out" }, "-=0.5");
         
     }, container);
     
@@ -52,11 +51,6 @@ export default function Hero() {
           Generation of the Web
         </h1>
       </div>
-
-      {/* Subtext */}
-      <p className="subtext z-10 text-center text-muted text-sm sm:text-base md:text-[18px] leading-relaxed max-w-[560px] font-body mb-8 sm:mb-10 px-2">
-        We craft cinematic, high-conversion websites that command attention and drive growth. Step into the new standard of web presence.
-      </p>
 
       {/* Buttons */}
       <div className="z-10 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full justify-center px-0">
