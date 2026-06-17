@@ -9,7 +9,7 @@ This document serves as the master context file for Antigravity or any other AI 
 - **Styling**: Tailwind CSS (Native/Custom configuring)
 - **Animations**: GSAP (GreenSock) for high-performance scroll triggers and layout animations.
 - **Routing**: `react-router-dom`
-- **Hosting**: Netlify (Automated CI/CD via GitHub pushing to `main`)
+- **Hosting**: Netlify (Automated CI/CD via GitHub pushing to `preview` branch for preview deploys, and merging to `main` for production. Utilizes `[skip ci]` for intermediate commits to save build credits.)
 
 ## Design System & Aesthetic
 The site is built around a **Sleek, High-Tech, Dark-Mode Glassmorphism** aesthetic.
@@ -47,4 +47,7 @@ The site is built around a **Sleek, High-Tech, Dark-Mode Glassmorphism** aesthet
 ## Agent Instructions for Continuation
 1. **Maintain Theme**: Any new components MUST adhere to the dark-mode glassmorphism theme (`bg-dark-surface border-border/20`). Do NOT default to basic white/light Tailwind components.
 2. **GSAP First**: Use GSAP for page entrance animations (`opacity: 0, y: 50 -> opacity: 1, y: 0`), avoiding standard CSS animations unless completely trivial.
-3. **Deployment**: When code is finalized, always execute `git add . && git commit -m "..." && git push` to trigger the Netlify deployment pipeline automatically for the user.
+3. **Deployment & Credit Saving**: 
+   - For intermediate work, always append `[skip ci]` to your commit message (e.g., `git commit -m "fix: layout details [skip ci]"`) to prevent Netlify from wasting build credits.
+   - To build a preview, push changes to the `preview` branch. 
+   - Only push or merge to the `main` branch when launching production updates.
