@@ -97,6 +97,7 @@ export default function Navbar() {
 
             <Link to="/blog" className="hover:text-accent transition-colors hover:-translate-y-[1px] transform">Blog</Link>
             <Link to="/about" className="hover:text-accent transition-colors hover:-translate-y-[1px] transform">About</Link>
+            <Link to="/leadership" className="hover:text-accent transition-colors hover:-translate-y-[1px] transform">Leadership</Link>
           </div>
           
           <div className="hidden md:block">
@@ -175,6 +176,7 @@ export default function Navbar() {
 
           <Link to="/blog" onClick={() => setMobileMenuOpen(false)} className="hover:text-accent text-3xl">Blog</Link>
           <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="hover:text-accent text-3xl">About</Link>
+          <Link to="/leadership" onClick={() => setMobileMenuOpen(false)} className="hover:text-accent text-3xl">Leadership</Link>
           <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="mt-4 bg-accent text-dark px-12 py-4 rounded-full text-lg block text-center">
             Start a Project
           </Link>
@@ -183,5 +185,4 @@ export default function Navbar() {
     </>
   );
 }
-
 
