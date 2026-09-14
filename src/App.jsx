@@ -10,7 +10,6 @@ import ContactPage from './components/ContactPage'
 import Footer from './components/Footer'
 import BlogList from './components/BlogList'
 import BlogPost from './components/BlogPost'
-import Leadership from './components/Leadership'
 import GoogleAnalytics from './components/GoogleAnalytics'
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
         <Route path="/services/:slug" element={<ServicePage />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/about" element={<About />} />
-        <Route path="/leadership" element={<Leadership />} />
         <Route path="/process" element={<ProcessPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blog" element={<BlogList />} />

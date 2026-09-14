@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Target, Cpu, Zap, Award } from 'lucide-react';
+import Leadership from './Leadership';
 
 export default function About() {
   const container = useRef(null);
@@ -70,6 +71,8 @@ export default function About() {
             </p>
           </div>
         </div>
+
+        <Leadership />
 
       </div>
     </div>

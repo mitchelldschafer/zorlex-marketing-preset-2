@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Leadership() {
   return (
-    <section className="min-h-screen bg-dark pt-28 pb-16 sm:pt-40 sm:pb-28 px-4 sm:px-6">
+    <section id="leadership" className="scroll-mt-28 border-t border-white/5 pt-16 sm:pt-28">
       <div className="max-w-[1320px] mx-auto">
         <div className="max-w-3xl mb-10 sm:mb-16">
           <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 mb-6 text-xs font-mono tracking-[0.18em] text-accent uppercase">

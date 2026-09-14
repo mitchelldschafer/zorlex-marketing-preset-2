@@ -21,7 +21,7 @@ export default function Footer() {
             <a href="#work" className="font-body text-light/80 hover:text-accent transition-all duration-300 hover:translate-x-2 w-max">Work</a>
             <a href="#services" className="font-body text-light/80 hover:text-accent transition-all duration-300 hover:translate-x-2 w-max">Services</a>
             <a href="#about" className="font-body text-light/80 hover:text-accent transition-all duration-300 hover:translate-x-2 w-max">About</a>
-            <Link to="/leadership" className="font-body text-light/80 hover:text-accent transition-all duration-300 hover:translate-x-2 w-max">Leadership</Link>
+            <Link to="/about#leadership" className="font-body text-light/80 hover:text-accent transition-all duration-300 hover:translate-x-2 w-max">Leadership</Link>
             <a href="#process" className="font-body text-light/80 hover:text-accent transition-all duration-300 hover:translate-x-2 w-max">Process</a>
             <a href="#faq" className="font-body text-light/80 hover:text-accent transition-all duration-300 hover:translate-x-2 w-max">FAQ</a>
           </div>
