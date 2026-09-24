@@ -1,0 +1,131 @@
+{
+  "settings": {
+    "maxAgeDays": 3,
+    "maxItemsPerSource": 10,
+    "maxItemsPerCategory": 12,
+    "outputDir": "content-ideas"
+  },
+  "keywords": {
+    "boost": [
+      "small business",
+      "google",
+      "update",
+      "trend",
+      "2026",
+      "guide",
+      "study",
+      "report",
+      "launch"
+    ],
+    "categories": {
+      "ai-automation": [
+        "ai",
+        "automation",
+        "agent",
+        "workflow",
+        "chatbot",
+        "llm",
+        "claude",
+        "gpt",
+        "machine learning",
+        "no-code"
+      ],
+      "digital-marketing": [
+        "seo",
+        "search",
+        "ranking",
+        "content marketing",
+        "copywriting",
+        "conversion",
+        "email marketing",
+        "social media",
+        "ads",
+        "analytics"
+      ],
+      "website-builds": [
+        "web design",
+        "website",
+        "core web vitals",
+        "performance",
+        "accessibility",
+        "ux",
+        "landing page",
+        "redesign",
+        "css",
+        "react"
+      ]
+    }
+  },
+  "sources": [
+    {
+      "name": "TechCrunch AI",
+      "category": "ai-automation",
+      "url": "https://techcrunch.com/category/artificial-intelligence/feed/"
+    },
+    {
+      "name": "The Verge AI (via Google News)",
+      "category": "ai-automation",
+      "url": "https://news.google.com/rss/search?q=site:theverge.com+AI+when:3d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "MIT Technology Review",
+      "category": "ai-automation",
+      "url": "https://www.technologyreview.com/feed/"
+    },
+    {
+      "name": "Zapier Blog",
+      "category": "ai-automation",
+      "url": "https://zapier.com/blog/feeds/latest/"
+    },
+    {
+      "name": "Google News: AI automation for business",
+      "category": "ai-automation",
+      "url": "https://news.google.com/rss/search?q=%22AI+automation%22+business&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Search Engine Journal",
+      "category": "digital-marketing",
+      "url": "https://www.searchenginejournal.com/feed/"
+    },
+    {
+      "name": "Search Engine Land",
+      "category": "digital-marketing",
+      "url": "https://searchengineland.com/feed"
+    },
+    {
+      "name": "Moz + Content Marketing Institute (via Google News)",
+      "category": "digital-marketing",
+      "url": "https://news.google.com/rss/search?q=site:moz.com+OR+site:contentmarketinginstitute.com+when:3d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Ahrefs Blog",
+      "category": "digital-marketing",
+      "url": "https://ahrefs.com/blog/feed/"
+    },
+    {
+      "name": "Google News: Google algorithm update",
+      "category": "digital-marketing",
+      "url": "https://news.google.com/rss/search?q=google+%22algorithm+update%22+SEO&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Smashing Magazine",
+      "category": "website-builds",
+      "url": "https://www.smashingmagazine.com/feed/"
+    },
+    {
+      "name": "CSS-Tricks",
+      "category": "website-builds",
+      "url": "https://css-tricks.com/feed/"
+    },
+    {
+      "name": "web.dev",
+      "category": "website-builds",
+      "url": "https://web.dev/static/blog/feed.xml"
+    },
+    {
+      "name": "Google News: website redesign trends",
+      "category": "website-builds",
+      "url": "https://news.google.com/rss/search?q=%22website+design%22+trends&hl=en-US&gl=US&ceid=US:en"
+    }
+  ]
+}

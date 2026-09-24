@@ -27,3 +27,6 @@ dist-ssr
 .netlify
 .env
 public/rss.xml
+
+# Generated article idea digests
+content-ideas/

@@ -1,0 +1,38 @@
+name: Daily article idea digest
+
+on:
+  schedule:
+    # 13:00 UTC daily (~8am ET / 6am MT). Runs from the default branch only.
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # The script only uses Node built-ins, so no npm install needed.
+      - name: Generate digest
+        run: node scripts/fetch-article-ideas.js
+
+      - name: Post digest as a GitHub issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          FILE=$(ls content-ideas/digest-*.md | tail -n 1)
+          DATE=$(date -u +%F)
+          gh label create content-ideas --color 6366F1 --description "Auto-generated article idea digests" --repo "$GITHUB_REPOSITORY" || true
+          gh issue create \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "📰 Article ideas — $DATE" \
+            --label content-ideas \
+            --body-file "$FILE"
